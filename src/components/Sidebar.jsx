@@ -6,7 +6,7 @@ import DashboardIcon from '../assets/icons/png/Dashboard.png';
 import CategoryIcon from '../assets/icons/png/Category.png';
 import ProductsIcon from '../assets/icons/png/Products.png';
 import OrdersIcon from '../assets/icons/png/Orders.png';
-import CustomersIcon from '../assets/icons/png/Customers.png';
+import CustomersIcon from '../assets/icons/png/customers.png';
 import WritersIcon from '../assets/icons/png/Writers.png';
 import PagesIcon from '../assets/icons/png/Pages.png';
 import MultimediaIcon from '../assets/icons/png/Multimedia.png';

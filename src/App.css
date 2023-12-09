@@ -59,6 +59,18 @@ code {
 
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  background-color: black;
+  border-radius: 0;
+  color: #49b6d6;
+  border: 2px solid #49b6d6;
+  border-left: 0;
+  border-right: 0;
+  margin: -2px 0px
+}
+
+
 .form-control:focus,
 .form-select:focus {
   border-color: #fe8686;

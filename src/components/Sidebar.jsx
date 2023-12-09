@@ -43,7 +43,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/category" className="nav-link">
                 <div className="custom-li-item">
                   <img src={CategoryIcon} alt="" width={35} />
@@ -51,7 +51,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/products" className="nav-link">
                 <div className="custom-li-item">
                   <img src={ProductsIcon} alt="" width={35} />
@@ -59,7 +59,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/orders" className="nav-link">
                 <div className="custom-li-item">
                   <img src={OrdersIcon} alt="" width={35} />
@@ -67,7 +67,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/customers" className="nav-link">
                 <div className="custom-li-item">
                   <img src={CustomersIcon} alt="" width={35} />
@@ -75,7 +75,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/writers" className="nav-link">
                 <div className="custom-li-item">
                   <img src={WritersIcon} alt="" width={35} />
@@ -83,7 +83,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/pages" className="nav-link">
                 <div className="custom-li-item">
                   <img src={PagesIcon} alt="" width={35} />
@@ -91,7 +91,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/multimedia" className="nav-link">
                 <div className="custom-li-item">
                   <img src={MultimediaIcon} alt="" width={35} />
@@ -99,7 +99,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/visitor" className="nav-link">
                 <div className="custom-li-item">
                   <img src={VisitorIcon} alt="" width={35} />
@@ -107,7 +107,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/ebmeevgdcnvi" className="nav-link">
                 <div className="custom-li-item">
                   <img src={BoisorbouttomupoharIcon} alt="" width={35} />
@@ -115,7 +115,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/cywckvkikieb" className="nav-link">
                 <div className="custom-li-item">
                   <img src={PuthiprokasherBoiIcon} alt="" width={35} />
@@ -123,7 +123,7 @@ const Sidebar = () => {
                 </div>
               </Link>
             </li>
-            <li className="border border-top-0 nav-item border-left-0">
+            <li className="border border-end-0 border-start-0 nav-item">
               <Link to="/dashboard/settings" className="nav-link">
                 <div className="custom-li-item">
                   <img src={SettingsIcon} alt="" width={35} />

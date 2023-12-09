@@ -2,18 +2,18 @@
 import React from "react";
 import { NavLink as Link } from 'react-router-dom';
 import './Components.css'
-import DashboardIcon from '../assets/icons/png/Dashboard.png';
-import CategoryIcon from '../assets/icons/png/Category.png';
-import ProductsIcon from '../assets/icons/png/Products.png';
-import OrdersIcon from '../assets/icons/png/Orders.png';
+import DashboardIcon from '../assets/icons/png/dashboard.png';
+import CategoryIcon from '../assets/icons/png/category.png';
+import ProductsIcon from '../assets/icons/png/products.png';
+import OrdersIcon from '../assets/icons/png/orders.png';
 import CustomersIcon from '../assets/icons/png/customers.png';
 import WritersIcon from '../assets/icons/png/writers.png';
-import PagesIcon from '../assets/icons/png/Pages.png';
+import PagesIcon from '../assets/icons/png/pages.png';
 import MultimediaIcon from '../assets/icons/png/Multimedia.png';
-import VisitorIcon from '../assets/icons/png/Visitor.png';
+import VisitorIcon from '../assets/icons/png/visitor.png';
 import BoisorbouttomupoharIcon from '../assets/icons/png/boi-sorbouttom-upohar.png';
 import PuthiprokasherBoiIcon from '../assets/icons/png/puthiprokasher-boi.png';
-import SettingsIcon from '../assets/icons/png/Settings.png';
+import SettingsIcon from '../assets/icons/png/settings.png';
 
 const Sidebar = () => {
   return (

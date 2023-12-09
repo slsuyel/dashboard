@@ -1,0 +1,67 @@
+body {
+  font-family: 'Mitr';
+}
+
+.text-nil {
+  color: #49b6d6;
+}
+
+.bg-nil {
+  background: #49b6d6;
+}
+
+
+
+code {
+  font-family: 'Mitr';
+}
+
+.dropdown-menu {
+  min-width: 4rem;
+}
+
+.content-wrapper {
+  background-color: #e8e8e8;
+}
+
+
+
+.ctg-1,
+.ctg-2,
+.ctg-3,
+.ctg-4,
+.ctg-5 {
+  width: 12px;
+  height: 12px;
+}
+
+.ctg-1 {
+  background: red;
+}
+
+.ctg-2 {
+  background: blue;
+
+}
+
+.ctg-3 {
+  background: green;
+
+}
+
+.ctg-4 {
+  background: yellow;
+
+}
+
+.ctg-5 {
+  background: rgb(5, 5, 5);
+
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #fe8686;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(167, 212, 218, 0.25);
+}

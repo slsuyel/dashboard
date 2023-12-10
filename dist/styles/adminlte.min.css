@@ -1,3 +1,4 @@
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -5586,7 +5587,7 @@ input[type=submit].btn-block {
 .breadcrumb-item+.breadcrumb-item::before {
     float: left;
     padding-right: .5rem;
-    color: red;
+    color: #6c757d;
     content: "/"
 }
 

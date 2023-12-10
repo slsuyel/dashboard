@@ -15,6 +15,7 @@ import BoisorbouttomupoharIcon from '../assets/icons/png/boi-sorbouttom-upohar.p
 import PuthiprokasherBoiIcon from '../assets/icons/png/puthiprokasher-boi.png';
 import SettingsIcon from '../assets/icons/png/settings.png';
 import adminlogo from '../assets/icons/png/admin-logo.png';
+import logo from '../assets/icons/png/puthiprokash-logo.png';
 
 const Sidebar = () => {
   return (
@@ -26,7 +27,12 @@ const Sidebar = () => {
           className="brand-image img-circle elevation-1"
           style={{ opacity: ".8" }}
         />
-        <span className="brand-text font-weight-light">Admin Dashboard</span>
+        {/* <img src={logo} alt="" className="img-fluid" /> */}
+        <div>
+          <span className="brand-text font-weight-light">
+            পুথিপ্রকাশ
+          </span>
+        </div>
       </Link>
       <div className="sidebar">
         <nav className="mt-2">
@@ -36,96 +42,96 @@ const Sidebar = () => {
             role="menu"
             data-accordion="false"
           >
-            <li className="border nav-item border-left-0">
-              <Link to="/dashboard/" className="nav-link">
+            <li className="nav-item ">
+              <Link to="/dashboard/" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={DashboardIcon} alt="" width={35} />
                   <p className="ms-2">Dashboard</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/category" className="nav-link">
-                <div className="custom-li-item">
+            <li className=" nav-item">
+              <Link to="/dashboard/category" className="nav-link border-bottom rounded-0">
+                <div className="custom-li-item ">
                   <img src={CategoryIcon} alt="" width={35} />
                   <p className="ms-2">Category</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/products" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/products" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={ProductsIcon} alt="" width={35} />
                   <p className="ms-2">Products</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/orders" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/orders" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={OrdersIcon} alt="" width={35} />
                   <p className="ms-2">Orders</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/customers" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/customers" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={CustomersIcon} alt="" width={35} />
                   <p className="ms-2">Customers</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/writers" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/writers" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={WritersIcon} alt="" width={35} />
                   <p className="ms-2">Writers</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/pages" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/pages" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={PagesIcon} alt="" width={35} />
                   <p className="ms-2">Pages</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/multimedia" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/multimedia" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={MultimediaIcon} alt="" width={35} />
                   <p className="ms-2">Multimedia</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/visitor" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/visitor" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={VisitorIcon} alt="" width={35} />
                   <p className="ms-2">Visitor</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/ebmeevgdcnvi" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/ebmeevgdcnvi" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={BoisorbouttomupoharIcon} alt="" width={35} />
                   <p className="ms-2">বই সর্বোত্তম উপহার</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/cywckvkikieb" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/cywckvkikieb" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={PuthiprokasherBoiIcon} alt="" width={35} />
                   <p className="ms-2">পুথিপ্রকাশের বই</p>
                 </div>
               </Link>
             </li>
-            <li className="border border-end-0 border-start-0 nav-item">
-              <Link to="/dashboard/settings" className="nav-link">
+            <li className="nav-item">
+              <Link to="/dashboard/settings" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={SettingsIcon} alt="" width={35} />
                   <p className="ms-2">Settings</p>
@@ -138,7 +144,7 @@ const Sidebar = () => {
             </div>
 
             <li className="border nav-item ">
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-link border-bottom rounded-0">
                 <div className="custom-li-item">
                   <img src={DashboardIcon} alt="" width={35} />
                   <p className="ms-2">Home</p>

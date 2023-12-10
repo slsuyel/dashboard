@@ -15,11 +15,11 @@ body {
 
 
 .text-nil {
-  color: #49b6d6;
+  color: #33CCCC;
 }
 
 .bg-nil {
-  background: #49b6d6;
+  background: #33CCCC;
 }
 
 
@@ -83,9 +83,13 @@ code {
 }
 
 
+.form-control {
+  border: 1px solid #343a40c7 !important;
+}
+
 .form-control:focus,
 .form-select:focus {
-  border-color: #fe8686;
+  border-color: #343a40;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(167, 212, 218, 0.25);
 }
@@ -93,4 +97,23 @@ code {
 
 .breadcrumb-item+.breadcrumb-item::before {
   color: #49b6d6 !important;
+}
+
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #010101;
+  color: #33CCCC;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+  color: #33CCCC;
+  border: 0;
+  border-radius: 0;
+  background-color: #33CCCC;
+}
+
+a {
+  color: #EDEFEF;
+  color: #33CCCC;
 }

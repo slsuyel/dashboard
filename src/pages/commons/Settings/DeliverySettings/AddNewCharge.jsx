@@ -23,45 +23,56 @@ const AddNewCharge = () => {
 
 
     return (
-        <div className='bg-secondary-subtle mx-auto my-3 py-3 col-md-9'>
 
-            <Form onSubmit={handleSubmit} className=' mx-auto'>
+        <div className="content-wrapper">
+            <div className="content-header">
 
-                <Form.Group controlId="deliveredTo">
-                    <Form.Label>Delivered To</Form.Label>
-                    <Form.Control type="text" placeholder="Enter deliveredTo" />
-                </Form.Group>
+                <div className='bg-secondary-subtle mx-auto my-3 py-3 col-md-9'>
 
-                <Form.Group controlId="weightFrom">
-                    <Form.Label>Weight From</Form.Label>
-                    <Form.Control type="text" placeholder="Enter weightFrom" />
-                </Form.Group>
+                    <Form onSubmit={handleSubmit} className=' mx-auto'>
 
-                <Form.Group controlId="weightTo">
-                    <Form.Label>Weight To</Form.Label>
-                    <Form.Control type="text" placeholder="Enter weightTo" />
-                </Form.Group>
+                        <Form.Group controlId="deliveredTo">
+                            <Form.Label>Delivered To</Form.Label>
+                            <Form.Control type="text" placeholder="Enter deliveredTo" />
+                        </Form.Group>
 
-                <Form.Group controlId="charge">
-                    <Form.Label>Charge</Form.Label>
-                    <Form.Control type="text" placeholder="Enter charge" />
-                </Form.Group>
+                        <Form.Group controlId="weightFrom">
+                            <Form.Label>Weight From</Form.Label>
+                            <Form.Control type="text" placeholder="Enter weightFrom" />
+                        </Form.Group>
 
+                        <Form.Group controlId="weightTo">
+                            <Form.Label>Weight To</Form.Label>
+                            <Form.Control type="text" placeholder="Enter weightTo" />
+                        </Form.Group>
 
-                <div className='text-center'>
-                    <Button className='bg-nil border-0 mt-2 py-1 text-white w-50' type="submit">
-                        Save
-                    </Button>
-                </div>
-
-            </Form>
-            <div className='text-center'>
+                        <Form.Group controlId="charge">
+                            <Form.Label>Charge</Form.Label>
+                            <Form.Control type="text" placeholder="Enter charge" />
+                        </Form.Group>
 
 
-                <Link to='/dashboard/' className='bg-danger d-block mx-auto my-2 py-1 rounded text-decoration-none text-white w-50'>Cancel or Back to Home </Link>
+                        <div className='align-items-center d-flex gap-3 my-2'>
+                            <div>
+                                <Button className='border-0 btn btn-primary px-3 py-1 rounded-0 text-white' type="submit">
+                                    Save
+                                </Button>
+                            </div>
+
+                            <div>
+                                <button className='btn-danger border-0 py-1 text-white'>
+                                    <Link to='/dashboard/settings' className='p-1 text-decoration-none text-white'>
+                                        Cancel
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
 
 
-            </div>
+                    </Form>
+
+                </div >
+            </div >
         </div >
     );
 };

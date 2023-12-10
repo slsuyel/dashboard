@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Breadcrumb from '../../../Utilites/Breadcrumb';
 import GeneralSettings from './GeneralSettings/GeneralSettings.jsx';
 import DeliverySettings from './DeliverySettings/DeliverySettings.jsx';
 import SliderSettings from './SliderSetting/SliderSettings.jsx';
 import UserControlSettings from './UserControlSettings/UserControlSettings.jsx';
-import { AuthContext } from '../../../providers/AuthProviders.jsx';
 
 const tabConfig = [
     { id: 'General', label: 'General', component: <GeneralSettings /> },
@@ -14,12 +13,12 @@ const tabConfig = [
 ];
 
 const Settings = () => {
+    const [activeTab, setActiveTab] = useState(localStorage.getItem('activeTab') || tabConfig[0].id);
 
-    const { isNightMode } = useContext(AuthContext);
-    console.log(isNightMode);
-
-
-    const [activeTab, setActiveTab] = useState(tabConfig[0].id);
+    useEffect(() => {
+        // Save the activeTab to localStorage whenever it changes
+        localStorage.setItem('activeTab', activeTab);
+    }, [activeTab]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -34,7 +33,7 @@ const Settings = () => {
                     {tabConfig.map((tab) => (
                         <button
                             key={tab.id}
-                            className={`p-1 px-2 ${activeTab === tab.id
+                            className={` px-3 py-2 ${activeTab === tab.id
                                 ? 'bg-nil border-2 border-secondary fw-bold rounded text-white'
                                 : 'btn btn-secondary'
                                 }`}

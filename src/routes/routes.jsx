@@ -4,11 +4,12 @@ import Signin from "../pages/auth/Signin";
 import Signup from "../pages/auth/Signup";
 import WithNavbar from "../layouts/WithNavbar";
 import Home from "../pages/home";
-import About from "../pages/about";
 import Users from "../pages/users";
 import Blogs from "../pages/blogs";
 import ErrorPage from "../Utilites/ErrorPage";
 import Settings from './../pages/commons/Settings/Settings';
+import Table from "../pages/about/Table";
+import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: "signup",
                 element: <Signup />,
+            },
+            {
+                path: "table",
+                element: <Table />,
             },
         ],
     },
@@ -40,9 +45,10 @@ export const router = createBrowserRouter([
                 element: <Settings />,
             },
             {
-                path: "setting",
-                element: <About />,
+                path: "settings/new-delivery",
+                element: <AddNewCharge />,
             },
+
         ],
     },
 ]);

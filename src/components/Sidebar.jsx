@@ -14,13 +14,14 @@ import VisitorIcon from '../assets/icons/png/visitor.png';
 import BoisorbouttomupoharIcon from '../assets/icons/png/boi-sorbouttom-upohar.png';
 import PuthiprokasherBoiIcon from '../assets/icons/png/puthiprokasher-boi.png';
 import SettingsIcon from '../assets/icons/png/settings.png';
+import adminlogo from '../assets/icons/png/admin-logo.png';
 
 const Sidebar = () => {
   return (
     <aside className="main-sidebar nav-pills sidebar-dark-primary sidebar-no-expand elevation-1">
       <Link to="/dashboard" className="brand-link text-decoration-none">
         <img
-          src="/src/assets/dist/img/AdminLTELogo.png"
+          src={adminlogo}
           alt="AdminLTE "
           className="brand-image img-circle elevation-1"
           style={{ opacity: ".8" }}

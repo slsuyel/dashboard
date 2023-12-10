@@ -7,7 +7,6 @@ export default function Navbar() {
 
   const handleToggle = () => {
     setNightMode(!isNightMode);
-    // You can also add additional logic here for changing themes/styles
   };
 
   return (

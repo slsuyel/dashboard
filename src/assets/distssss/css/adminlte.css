@@ -5595,10 +5595,10 @@ input[type="button"].btn-block {
   padding-left: 0.5rem;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #6c757d;
+  color: #1084f7 !important;
   content: "/";
 }
 

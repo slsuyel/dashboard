@@ -1,28 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import newOrder from "../../assets/icons/png/new-order.png"
 import totalSales from "../../assets/icons/png/total-sales.png"
 import totalProducts from "../../assets/icons/png/total-products.png"
 import segmentation from "../../assets/icons/png/segmentation.png"
+import vistior from "../../assets/icons/png/total-visitor.png"
+import users from "../../assets/icons/png/total-user.png"
+import { AuthContext } from "../../providers/AuthProviders";
+import Breadcrumb from "../../Utilites/Breadcrumb";
 
 export default function Home() {
+
+  const { isNightMode } = useContext(AuthContext);
+  console.log(isNightMode);
+
   return (
-    <div className="content-wrapper">
+    <div className={`content-wrapper ${isNightMode ? 'night-mode' : ''}`} >
       <div className="content-header">
-        <div className="container-fluid">
-          <div className="row mb-2">
-            <div className="col-sm-6">
-              <h1 className="m-0">Home</h1>
-            </div>
-            <div className="col-sm-6">
-              <ol className="breadcrumb float-sm-right">
-                <li className="breadcrumb-item">
-                  <li className="breadcrumb-item active">Home</li>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
+
+
+        <Breadcrumb page={'Home'} />
+
       </div>
 
 
@@ -79,8 +77,8 @@ export default function Home() {
 
           <div className="row mx-auto my-3">
 
-            <div className="col-md-5">
-              <div className="border border-3 border-white mx-3 p-1 rounded-3 shadow-lg">
+            <div className="col-md-5 my-auto">
+              <div className="border border-3 mb-2 border-white mx-3 p-1 py-3 rounded-3 shadow-lg">
                 <div className="row">
                   <div className="col-md-7 text-center ">
                     <p className="mb-0 mb-2 text-secondary">Top 05 Category </p>
@@ -119,6 +117,69 @@ export default function Home() {
 
 
             </div>
+
+            <div className="col-md-7  text-secondary">
+
+              <div className="row align-items-center border border-3 border-white  mx-3 px-1 py-2 rounded-3 shadow-lg mb-2">
+                <div className="col-md-6">
+
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>Todays visitors</span>
+                    <span> -49</span>
+                  </div>
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>Todays visitors</span>
+                    <span> -52</span>
+                  </div>
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>Todays visitors</span>
+                    <span> -66</span>
+                  </div>
+
+                </div>
+
+
+                <div className="col-md-3 text-center ">
+                  <h6>Total Visitors</h6>
+                  <h3 className="text-nil">55000</h3>
+                </div>
+
+                <div className="col-md-3 text-center">
+                  <img src={vistior} alt="" width={70} />
+                </div>
+              </div>
+              <div className="row align-items-center border border-3 border-white  mx-3 px-1 py-2 rounded-3 shadow-lg mb-2">
+                <div className="col-md-6">
+
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>New Usersr (30 days)</span>
+                    <span> -49</span>
+                  </div>
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>Avg. Users per month</span>
+                    <span> -52</span>
+                  </div>
+                  <div className="d-flex justify-content-between px-1 mb-1 me-3">
+                    <span>Visitors in a year</span>
+                    <span> -66</span>
+                  </div>
+
+                </div>
+
+
+                <div className="col-md-3 text-center">
+                  <h6>Total Users</h6>
+                  <h3 className="text-nil">55000</h3>
+                </div>
+
+                <div className="col-md-3 text-center">
+                  <img src={users} alt="" width={70} />
+                </div>
+              </div>
+
+            </div>
+
+
 
 
           </div>

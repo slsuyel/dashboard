@@ -3,16 +3,16 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+import defultSlider from '../../../../assets/images/multiple-image-slider-wordpress.png';
+
 const AddNewSlider = () => {
     const [formData, setFormData] = useState({
         title: '',
-        image: null, // Change to null for file input
+        image: null,
     });
 
     const handleChange = (event) => {
         const { id, value, type } = event.target;
-
-        // Handle file input separately
         const newValue = type === 'file' ? event.target.files[0] : value;
 
         setFormData((prevData) => ({
@@ -37,37 +37,50 @@ const AddNewSlider = () => {
     };
 
     return (
-        <div className="bg-secondary-subtle mx-auto my-3 py-3 col-md-9">
-            <Form onSubmit={handleSubmit} className="mx-auto">
-                <Form.Group controlId="title">
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter title"
-                        value={formData.title}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-
-                <Form.Group controlId="image">
-                    <Form.Label>Image</Form.Label>
-                    <Form.Control
-                        type="file" // Change to file input
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-
-                <div className="text-center">
-                    <Button className="bg-nil border-0 mt-2 py-1 text-white w-50" type="submit">
-                        Save
-                    </Button>
+        <div className="content-wrapper">
+            <div className="content-header">
+                <div className="bg-secondary-subtle mx-auto my-3 py-3 col-md-9">
+                    <Form onSubmit={handleSubmit} className="mx-auto row">
+                        <div className="col-md-6 mx-auto">
+                            <Form.Group controlId="title">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter title"
+                                    value={formData.title}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+                            <br />
+                            <Form.Group controlId="image">
+                                <Form.Label>Image</Form.Label>
+                                <Form.Control type="file" onChange={handleChange} />
+                            </Form.Group>
+                        </div>
+                        <div className="col-md-6 mx-auto">
+                            <img
+                                src={formData.image ? URL.createObjectURL(formData.image) : defultSlider}
+                                alt=""
+                                width={300}
+                                height={200}
+                            />
+                        </div>
+                        <div className='align-items-center d-flex gap-3 my-2'>
+                            <div>
+                                <Button className='border-0 btn btn-primary px-3 py-1 rounded-0 text-white' type="submit">
+                                    Save
+                                </Button>
+                            </div>
+                            <div>
+                                <button className='btn-danger border-0 py-1 text-white'>
+                                    <Link to='/dashboard/settings' className='p-1 text-decoration-none text-white'>
+                                        Cancel
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
+                    </Form>
                 </div>
-            </Form>
-
-            <div className="text-center">
-                <Link to="/dashboard/" className="bg-danger d-block mx-auto my-2 py-1 rounded text-decoration-none text-white w-50">
-                    Cancel or Back to Home
-                </Link>
             </div>
         </div>
     );

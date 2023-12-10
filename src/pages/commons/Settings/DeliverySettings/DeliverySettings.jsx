@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { useTable, useSortBy, usePagination } from 'react-table';
 import addIcon from '../../../../assets/icons/png/+Add.png';
-import AddNewCharge from "./AddNewCharge";
 import { Link } from 'react-router-dom';
 
 const data = [
@@ -15,8 +13,7 @@ const data = [
 const DeliverySettings = () => {
     const [selectedOption, setSelectedOption] = useState('Edit');
     const [selectedIds, setSelectedIds] = useState([]);
-    const [show, setShow] = useState(false);
-    const [add, setAdd] = useState(false);
+
 
     const handleCheckboxChange = (id) => {
         const updatedIds = [...selectedIds];
@@ -131,6 +128,8 @@ const DeliverySettings = () => {
                 </div>
             </div>
             <div className='table-responsive '>
+
+
                 <table {...getTableProps()} className="table table-striped">
                     <thead>
                         {headerGroups.map(headerGroup => (
@@ -159,7 +158,7 @@ const DeliverySettings = () => {
                         })}
                     </tbody>
                 </table>
-
+                {/* Pagginations */}
                 <div className="p-1 text-end w-100">
                     <div className="d-inline ">
                         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>

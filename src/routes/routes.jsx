@@ -10,6 +10,7 @@ import ErrorPage from "../Utilites/ErrorPage";
 import Settings from './../pages/commons/Settings/Settings';
 import Table from "../pages/about/Table";
 import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
+import AddNewSlider from './../pages/commons/Settings/SliderSetting/AddNewSlider';
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             {
                 path: "settings/new-delivery",
                 element: <AddNewCharge />,
+            },
+            {
+                path: "settings/new-sliders",
+                element: <AddNewSlider />,
             },
 
         ],

@@ -29,7 +29,7 @@ export default function Home() {
 
           <div className="row mx-auto ">
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 p-1 rounded-3 shadow-lg">
+              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary"> New Order</p>
@@ -44,7 +44,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 p-1 rounded-3 shadow-lg">
+              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Products</p>
@@ -59,7 +59,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 p-1 rounded-3 shadow-lg">
+              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Sales</p>
@@ -120,7 +120,7 @@ export default function Home() {
 
             <div className="col-md-7  text-secondary">
 
-              <div className="row align-items-center border border-3 border-white  mx-3 px-1 py-2 rounded-3 shadow-lg mb-2">
+              <div className="align-items-center border border-3 border-white mb-2 px-1 py-2 rounded-3 row shadow-lg">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">
@@ -148,7 +148,7 @@ export default function Home() {
                   <img src={vistior} alt="" width={70} />
                 </div>
               </div>
-              <div className="row align-items-center border border-3 border-white  mx-3 px-1 py-2 rounded-3 shadow-lg mb-2">
+              <div className="align-items-center border border-3 border-white mb-2 px-1 py-2 rounded-3 row shadow-lg">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">

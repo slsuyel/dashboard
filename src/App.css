@@ -78,8 +78,8 @@ code {
   color: #49b6d6;
   border: 2px solid #49b6d6;
   border-left: 0;
-  border-right: 0;
-  margin: -2px 0px
+  margin: -1px 0px;
+  width: 100%;
 }
 
 
@@ -113,7 +113,7 @@ code {
   background-color: #33CCCC;
 }
 
-a {
-  color: #EDEFEF;
-  color: #33CCCC;
+
+li.nav-item.border-bottom.nav-item.rounded-0 :hover {
+  background: #1b334b00;
 }

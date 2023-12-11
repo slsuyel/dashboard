@@ -91,7 +91,7 @@ const UserControlSettings = () => {
         setAdd(true);
     };
 
-    /*  { id: 2, name: 'Hasanur Rahman', designation: 'Publisher', email: 'hrahman@gmail.com', contact: '01918171652', role: 'Publicity', access: '30 days', isChecked: false } */
+
     const columns = React.useMemo(
         () => [
             { Header: 'ID', accessor: 'id' },

@@ -12,6 +12,9 @@ import Table from "../pages/about/Table";
 import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
 import AddNewSlider from './../pages/commons/Settings/SliderSetting/AddNewSlider';
 import AddNewUser from "../pages/commons/Settings/UserControlSettings/AddNewUser";
+import Category from "../pages/Category/Category";
+import Products from "../pages/Products/Products";
+import NewCategory from "../pages/Category/NewCategory";
 
 export const router = createBrowserRouter([
     {
@@ -57,6 +60,18 @@ export const router = createBrowserRouter([
             {
                 path: "settings/user-control",
                 element: <AddNewUser />,
+            },
+            {
+                path: "category",
+                element: <Category />,
+            },
+            {
+                path: "category/add-new",
+                element: <NewCategory />,
+            },
+            {
+                path: "products",
+                element: <Products />,
             },
 
         ],

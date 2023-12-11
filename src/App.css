@@ -104,6 +104,7 @@ code {
 .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
   background-color: #010101;
   color: #33CCCC;
+  width: 100%;
 }
 
 .nav-pills .nav-link:not(.active):hover {

@@ -89,7 +89,7 @@ const GeneralSettings = () => {
 
     return (
 
-        <div className='bg-white row w-100 mx-auto'>
+        <div className='bg-white row w-100 mx-auto mt-3 '>
             <h2 className='my-4 text-center'>General Settings</h2>
 
             <form className='col-md-11 mx-auto text-secondary' onSubmit={handleSubmit}>

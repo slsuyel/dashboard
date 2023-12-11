@@ -11,6 +11,7 @@ import Settings from './../pages/commons/Settings/Settings';
 import Table from "../pages/about/Table";
 import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
 import AddNewSlider from './../pages/commons/Settings/SliderSetting/AddNewSlider';
+import AddNewUser from "../pages/commons/Settings/UserControlSettings/AddNewUser";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
             {
                 path: "settings/new-sliders",
                 element: <AddNewSlider />,
+            },
+            {
+                path: "settings/user-control",
+                element: <AddNewUser />,
             },
 
         ],

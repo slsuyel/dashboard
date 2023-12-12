@@ -15,6 +15,8 @@ import AddNewUser from "../pages/commons/Settings/UserControlSettings/AddNewUser
 import Category from "../pages/Category/Category";
 import Products from "../pages/Products/Products";
 import NewCategory from "../pages/Category/NewCategory";
+import Profile from "../pages/auth/Profile";
+import Writers from "../pages/Writers/Writers";
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
                 path: "",
                 element: <Home />,
             },
+            {
+                path: "profile",
+                element: <Profile />,
+            },
 
             {
                 path: "settings",
@@ -72,6 +78,10 @@ export const router = createBrowserRouter([
             {
                 path: "products",
                 element: <Products />,
+            },
+            {
+                path: "writers",
+                element: <Writers />,
             },
 
         ],

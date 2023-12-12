@@ -37,7 +37,7 @@ export default function Navbar() {
             </div>
             {showDropdown && (
               <div className="dropdown-menu dropdown-menu-end show">
-                <Link to="/profile" className="dropdown-item">
+                <Link to="/dashboard/profile" className="dropdown-item">
                   Profile
                 </Link>
                 <button className="dropdown-item" onClick={handleLogout}>

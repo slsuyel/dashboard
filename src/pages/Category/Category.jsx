@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import addIcon from '../../assets/icons/png/+Add.png';
-import { useTable, useSortBy, usePagination } from 'react-table';
 import { Link } from "react-router-dom";
+import { useTable, useSortBy, usePagination } from 'react-table';
 
 const data = [
     {
@@ -10,7 +10,7 @@ const data = [
         "primaryCategory": "Electronics",
         "subCategory": "Smartphones",
         "childCategory": "Android",
-        "image": "https://example.com/android_phone.jpg",
+        "image": "https://picsum.photos/500/300?random=1",
         "about": "Explore the latest Android smartphones with cutting-edge features.",
         "isChecked": false
     },
@@ -19,7 +19,7 @@ const data = [
         "primaryCategory": "Clothing",
         "subCategory": "Men's",
         "childCategory": "Casual Wear",
-        "image": "https://example.com/mens_casual_wear.jpg",
+        "image": "https://picsum.photos/500/300?random=2",
         "about": "Discover comfortable and stylish casual wear for men.",
         "isChecked": false
     },
@@ -28,7 +28,7 @@ const data = [
         "primaryCategory": "Home & Living",
         "subCategory": "Furniture",
         "childCategory": "Living Room",
-        "image": "https://example.com/living_room_furniture.jpg",
+        "image": "https://picsum.photos/500/300?random=3",
         "about": "Upgrade your living room with our elegant furniture collection.",
         "isChecked": false
     },
@@ -37,7 +37,7 @@ const data = [
         "primaryCategory": "Books",
         "subCategory": "Fiction",
         "childCategory": "Mystery",
-        "image": "https://example.com/mystery_book_cover.jpg",
+        "image": "https://picsum.photos/500/300?random=5",
         "about": "Immerse yourself in gripping mystery novels that keep you on the edge.",
         "isChecked": false
     }
@@ -180,7 +180,12 @@ const Category = () => {
                                             <th {...column.getHeaderProps(column.getSortByToggleProps())} className="text-nowrap">
                                                 {column.render('Header')}
                                                 <span className="ms-2">
-                                                    {column.isSorted ? (column.isSortedDesc ? <i className="fas fa-sort-down"></i> : <i className="fas fa-sort-up"></i>) : <i className="fas fa-sort"></i>}
+                                                    {column.isSorted ? (column.isSortedDesc ?
+                                                        <i className="fas fa-sort-down"></i> :
+                                                        <i className="fas fa-sort-up"></i>)
+                                                        :
+                                                        <i className="fas fa-sort"></i>
+                                                    }
                                                 </span>
                                             </th>
                                         ))}

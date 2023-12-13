@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import SortIcon from '../../Utilites/SortIcon';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import addIcon from '../../assets/icons/png/+Add.png';
@@ -6,11 +6,10 @@ import Modal from 'react-bootstrap/Modal';
 
 import Swal from 'sweetalert2';
 import { Button } from 'react-bootstrap';
-import { AuthContext } from '../../providers/AuthProviders';
 const data = [
     {
         "id": 1,
-        "name": "John Doe",
+
         "writersNameEn": "John Doe",
         "writersNameBn": "জন ডো",
         "contact_no": "+1 (555) 123-4567",
@@ -20,7 +19,7 @@ const data = [
     },
     {
         "id": 2,
-        "name": "Jane Smith",
+
         "writersNameEn": "Jane Smith",
         "writersNameBn": "জেন স্মিথ",
         "contact_no": "+44 20 7946 0958",
@@ -30,7 +29,7 @@ const data = [
     },
     {
         "id": 3,
-        "name": "Ahmed Khan",
+
         "writersNameEn": "Ahmed Khan",
         "writersNameBn": "আহমেদ খান",
         "contact_no": "+91 98765 43210",
@@ -40,7 +39,7 @@ const data = [
     },
     {
         "id": 4,
-        "name": "Maria Rodriguez",
+
         "writersNameEn": "Maria Rodriguez",
         "writersNameBn": "মারিয়া রড্রিগেজ",
         "contact_no": "+55 11 98765-4321",
@@ -51,16 +50,13 @@ const data = [
 ]
 
 const Writers = () => {
-
-    const { isNightMode } = useContext(AuthContext);
-
     const [selectedOption, setSelectedOption] = useState('Edit');
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
     const [showAddWritterModal, setShowAddWritterModal] = useState(false);
 
     const [formData, setFormData] = useState({
-        name: '',
+
         writersNameEnglish: '',
         writersNameBengali: '',
         contactNumber: '',
@@ -136,11 +132,8 @@ const Writers = () => {
         setSelectedOption(event.target.value);
     };
 
-    console.log(isNightMode);
-
-
     return (
-        <div className={`content-wrapper ${isNightMode ? 'night-mode' : ''}`}>
+        <div className="content-wrapper">
             <div className="content-header">
 
                 <Breadcrumb page={'Writers'} />
@@ -178,7 +171,7 @@ const Writers = () => {
                         <thead>
                             <tr className='text-center'>
                                 <th className='text-nowrap text-secondary'>ID  <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Name <SortIcon /></th>
+
                                 <th className='text-nowrap text-secondary'>Writers Name (English) <SortIcon /></th>
                                 <th className='text-nowrap text-secondary'>Writers Name (Bengali) <SortIcon /></th>
                                 <th className='text-nowrap text-secondary'>Type <SortIcon /></th>
@@ -197,7 +190,7 @@ const Writers = () => {
                             {data.map(writer => (
                                 <tr className='text-center' key={writer.id}>
                                     <td>{writer.id}</td>
-                                    <td>{writer.name}</td>
+
                                     <td>{writer.writersNameEn}</td>
                                     <td>{writer.writersNameBn}</td>
                                     <td>{writer.writerType}</td>
@@ -225,20 +218,7 @@ const Writers = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <form onSubmit={handleSubmit} id="yourFormId">
-                                <div className="align-items-center d-flex gap-1 justify-content-around mb-3">
-                                    <label htmlFor="name" className="form-label w-50 mb-0">
-                                        Name
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
+
 
                                 <div className="align-items-center d-flex gap-1 justify-content-around mb-3">
                                     <label htmlFor="writersNameEnglish" className="form-label w-50 mb-0">

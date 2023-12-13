@@ -4,11 +4,10 @@ import Signin from "../pages/auth/Signin";
 import Signup from "../pages/auth/Signup";
 import WithNavbar from "../layouts/WithNavbar";
 import Home from "../pages/home";
-import Users from "../pages/users";
-import Blogs from "../pages/blogs";
+
 import ErrorPage from "../Utilites/ErrorPage";
 import Settings from './../pages/commons/Settings/Settings';
-import Table from "../pages/about/Table";
+
 import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
 import AddNewSlider from './../pages/commons/Settings/SliderSetting/AddNewSlider';
 import AddNewUser from "../pages/commons/Settings/UserControlSettings/AddNewUser";
@@ -17,6 +16,11 @@ import Products from "../pages/Products/Products";
 import NewCategory from "../pages/Category/NewCategory";
 import Profile from "../pages/auth/Profile";
 import Writers from "../pages/Writers/Writers";
+import Orders from "../pages/Orders/Orders";
+import Customers from "../pages/Customers/Customers";
+import Visitor from "../pages/Visitor/Visitor";
+import Multimedia from "../pages/Multimedia/Multimedia";
+import Pages from "../pages/Pages/Pages";
 
 export const router = createBrowserRouter([
     {
@@ -32,10 +36,7 @@ export const router = createBrowserRouter([
                 path: "signup",
                 element: <Signup />,
             },
-            {
-                path: "table",
-                element: <Table />,
-            },
+
         ],
     },
     {
@@ -82,6 +83,26 @@ export const router = createBrowserRouter([
             {
                 path: "writers",
                 element: <Writers />,
+            },
+            {
+                path: "orders",
+                element: <Orders />,
+            },
+            {
+                path: "customers",
+                element: <Customers />,
+            },
+            {
+                path: "visitor",
+                element: <Visitor />,
+            },
+            {
+                path: "multimedia",
+                element: <Multimedia />,
+            },
+            {
+                path: "pages",
+                element: <Pages />,
             },
 
         ],

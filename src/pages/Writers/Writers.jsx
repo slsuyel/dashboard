@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SortIcon from '../../Utilites/SortIcon';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import addIcon from '../../assets/icons/png/+Add.png';
@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 
 import Swal from 'sweetalert2';
 import { Button } from 'react-bootstrap';
+import { AuthContext } from '../../providers/AuthProviders';
 const data = [
     {
         "id": 1,
@@ -50,6 +51,9 @@ const data = [
 ]
 
 const Writers = () => {
+
+    const { isNightMode } = useContext(AuthContext);
+
     const [selectedOption, setSelectedOption] = useState('Edit');
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
@@ -132,8 +136,11 @@ const Writers = () => {
         setSelectedOption(event.target.value);
     };
 
+    console.log(isNightMode);
+
+
     return (
-        <div className="content-wrapper">
+        <div className={`content-wrapper ${isNightMode ? 'night-mode' : ''}`}>
             <div className="content-header">
 
                 <Breadcrumb page={'Writers'} />

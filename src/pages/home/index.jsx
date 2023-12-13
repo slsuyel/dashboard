@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import newOrder from "../../assets/icons/png/new-order.png"
 import totalSales from "../../assets/icons/png/total-sales.png"
 import totalProducts from "../../assets/icons/png/total-products.png"
@@ -8,11 +7,13 @@ import vistior from "../../assets/icons/png/total-visitor.png"
 import users from "../../assets/icons/png/total-user.png"
 import { AuthContext } from "../../providers/AuthProviders";
 import Breadcrumb from "../../Utilites/Breadcrumb";
+import totalEarning from '../../assets/icons/png/total-earning.png'
+import avgSell from '../../assets/icons/png/avg.-sales.png'
+import newUser from '../../assets/icons/png/new-users.png'
 
 export default function Home() {
 
   const { isNightMode } = useContext(AuthContext);
-  console.log(isNightMode);
 
   return (
     <div className={`content-wrapper ${isNightMode ? 'night-mode' : ''}`} >
@@ -29,14 +30,14 @@ export default function Home() {
 
           <div className="row mx-auto ">
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
+              <div className=" mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary"> New Order</p>
                     <h1 className="mb-0 text-secondary">05</h1>
                   </div>
                   <div>
-                    <img src={newOrder} alt="" width={100} height={100} />
+                    <img className="ps-1 pt-2" src={newOrder} alt="" width={100} height={100} />
                   </div>
                 </div>
                 <hr className="my-2 p-0" />
@@ -44,14 +45,14 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
+              <div className=" mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Products</p>
                     <h1 className="mb-0 text-secondary">05</h1>
                   </div>
                   <div>
-                    <img src={totalProducts} alt="" width={100} height={100} />
+                    <img className="ps-1 pt-2" src={totalProducts} alt="" width={100} height={100} />
                   </div>
                 </div>
                 <hr className="my-2 p-0" />
@@ -59,14 +60,14 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className="border border-3 border-white mx-3 rounded-3 shadow-lg w-100">
+              <div className=" mx-3 rounded-3 shadow-lg w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Sales</p>
                     <h1 className="mb-0 text-secondary">05</h1>
                   </div>
                   <div>
-                    <img src={totalSales} alt="" width={100} height={100} />
+                    <img className="ps-1 pt-2" src={totalSales} alt="" width={100} height={100} />
                   </div>
                 </div>
                 <hr className="my-2 p-0" />
@@ -78,11 +79,11 @@ export default function Home() {
           <div className="row mx-auto my-3">
 
             <div className="col-md-5 my-auto">
-              <div className="border border-3 mb-2 border-white mx-3 p-1 py-3 rounded-3 shadow-lg">
+              <div className=" mb-2  mx-3 p-1 py-3 rounded-3 shadow-lg">
                 <div className="row">
                   <div className="col-md-7 text-center ">
                     <p className="mb-0 mb-2 text-secondary">Top 05 Category </p>
-                    <img src={segmentation} alt="" width={130} />
+                    <img className="ps-1 pt-2" src={segmentation} alt="" width={130} />
 
                   </div>
                   <div className="col-md-5">
@@ -120,7 +121,7 @@ export default function Home() {
 
             <div className="col-md-7  text-secondary">
 
-              <div className="align-items-center border border-3 border-white mb-2 px-1 py-2 rounded-3 row shadow-lg">
+              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-lg">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">
@@ -145,10 +146,10 @@ export default function Home() {
                 </div>
 
                 <div className="col-md-3 text-center">
-                  <img src={vistior} alt="" width={70} />
+                  <img className="ps-1 pt-2" src={vistior} alt="" width={70} />
                 </div>
               </div>
-              <div className="align-items-center border border-3 border-white mb-2 px-1 py-2 rounded-3 row shadow-lg">
+              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-lg">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">
@@ -173,7 +174,7 @@ export default function Home() {
                 </div>
 
                 <div className="col-md-3 text-center">
-                  <img src={users} alt="" width={70} />
+                  <img className="ps-1 pt-2" src={users} alt="" width={70} />
                 </div>
               </div>
 
@@ -185,7 +186,70 @@ export default function Home() {
           </div>
 
 
+          <div className="row mx-auto my-3 text-secondary">
 
+            <div className="col-md-4 my-1 mx-auto">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-lg">
+                <div className="d-flex gap-1 justify-content-between">
+                  <div><p className="mb-0">Total Earnings</p></div>
+                  <div className="d-flex gap-2 pb-2 text-decoration-underline text-info text-sm">
+                    <p className="mb-0">    Daily</p>
+                    <p className="mb-0"> Monthly</p>
+                    <p className="mb-0">   Yearly</p>
+                  </div>
+                </div>
+
+                <div className="align-items-end d-flex justify-content-between">
+                  <h3 className="pt-3">Tk. 49500.00</h3>
+                  <img className="ps-1 pt-2" src={totalEarning} alt="" width={70} height={60} />
+                </div>
+              </div>
+
+
+            </div>
+            <div className="col-md-4 my-1 mx-auto">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-lg">
+                <div className="d-flex gap-1 justify-content-between">
+                  <div><p className="mb-0">Avg. Sales</p></div>
+                  <div className="d-flex gap-2 pb-2 text-decoration-underline text-info text-sm">
+                    <p className="mb-0">    Daily</p>
+                    <p className="mb-0"> Monthly</p>
+                    <p className="mb-0">   Yearly</p>
+                  </div>
+                </div>
+
+                <div className="align-items-end d-flex justify-content-between">
+                  <h3 className="pt-3">Tk. 49500.00</h3>
+                  <img className="ps-1 pt-2" src={avgSell} alt="" width={70} height={60} />
+                </div>
+              </div>
+
+
+            </div>
+            <div className="col-md-4 my-1 mx-auto">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-lg">
+
+                <div className="align-items-center d-flex justify-content-between ">
+                  <div>
+                    <p className="mb-0">New Users</p>
+                    <p className="mb-0 text-sm">Last 30 days</p>
+                    <h3 className="mt-2">Tk. 49500.00</h3>
+                  </div>
+
+
+
+                  <div className="">
+
+                    <img className="ps-1 pt-2" src={newUser} alt="" width={70} height={70} />
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </div>
 
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Breadcrumb from '../../../Utilites/Breadcrumb';
+import Breadcrumb from '../../Utilites/Breadcrumb.jsx';
 import GeneralSettings from './GeneralSettings/GeneralSettings.jsx';
 import DeliverySettings from './DeliverySettings/DeliverySettings.jsx';
 import SliderSettings from './SliderSetting/SliderSettings.jsx';

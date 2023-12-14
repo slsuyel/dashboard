@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import { Button, Modal, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
-import addIcon from '../../../../assets/icons/png/+Add.png';
 import { useTable, useSortBy, usePagination } from 'react-table';
+import { Button, Modal, Form } from "react-bootstrap";
+import addIcon from '../../../assets/icons/png/+Add.png';
 import { Link } from "react-router-dom";
 
 const data = [
-    { id: 1, name: 'Md. Shahidul Islam', designation: 'Editor', email: 'shahidul@gmail.com', contact: '01918171652', role: 'Admin', access: '30 days', isChecked: false },
-    { id: 2, name: 'Hasanur Rahman', designation: 'Publisher', email: 'hrahman@gmail.com', contact: '01918171652', role: 'Publicity', access: '30 days', isChecked: false },
-    { id: 3, name: 'Mehedi Hasan', designation: 'Publisher', email: 'hasanmeh@gmail.com', contact: '01918171652', role: 'Publicity', access: '30 days', isChecked: false },
-    { id: 4, name: 'Zahid', designation: 'Publisher', email: 'zahid20349@gmail.com', contact: '01918171652', role: 'Publicity', access: '30 days', isChecked: false },
+    { id: 1, Title: 'Package 1', image: 'https://user-images.githubusercontent.com/17277013/88412566-a4134d80-cd8e-11ea-9f03-4e6870b4630a.png', isChecked: false },
+    { id: 2, Title: 'Package 2', image: 'https://dummyimage.com/150x150', isChecked: false },
+    { id: 3, Title: 'Package 3', image: 'https://dummyimage.com/150x150', isChecked: false },
 ];
 
-const UserControlSettings = () => {
-    // State variables
+
+const SliderSetting = () => {
     const [selectedOption, setSelectedOption] = useState('Edit');
     const [selectedIds, setSelectedIds] = useState([]);
     const [show, setShow] = useState(false);
-    const [add, setAdd] = useState(false);
+    const [formData, setFormData] = useState({
+        title: '',
+        image: null,
+    });
 
-    // Event handlers
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -67,41 +68,49 @@ const UserControlSettings = () => {
         setSelectedOption(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const nameValue = event.target.elements.name.value;
-        const designationValue = event.target.elements.designation.value;
-        const emailValue = event.target.elements.email.value;
-        const contactValue = event.target.elements.contact.value;
-        const roleValue = event.target.elements.role.value;
-        const accessValue = event.target.elements.access.value;
-
-        console.log({ nameValue, designationValue, emailValue, contactValue, roleValue, accessValue });
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
         handleClose();
+    };
 
-        Swal.fire({
-            title: "Ok!",
-            text: "Your file has been Saved.",
-            icon: "success"
+    const handleInputChange = (e) => {
+        const { id, value, files } = e.target;
+
+        setFormData((prevData) => {
+            if (id === 'Image') {
+                return {
+                    ...prevData,
+                    image: files[0],
+                };
+            } else if (id === 'Title') {
+                return {
+                    ...prevData,
+                    title: value,
+                };
+            }
+
+            return prevData;
         });
     };
 
     const handleAddItem = () => {
-        setAdd(true);
+        console.log('Add new item logic');
     };
-
 
     const columns = React.useMemo(
         () => [
             { Header: 'ID', accessor: 'id' },
-            { Header: 'Name', accessor: 'name', sortType: 'basic' },
-            { Header: 'Designation', accessor: 'designation', sortType: 'basic' },
-            { Header: 'Email', accessor: 'email', sortType: 'basic' },
-            { Header: 'Contact', accessor: 'contact', sortType: 'basic' },
-            { Header: 'Role', accessor: 'role', sortType: 'basic' },
+            { Header: 'Title', accessor: 'Title', sortType: 'basic' },
             {
-                Header: 'Checkbox',
+                Header: 'Image',
+                accessor: 'image',
+                Cell: ({ cell: { value } }) => (
+                    <img src={value} alt="Image" style={{ width: '50px', height: '50px' }} />
+                ),
+            },
+            {
+                Header: 'Is Checked',
                 accessor: 'isChecked',
                 Cell: ({ row }) => (
                     <input
@@ -136,12 +145,10 @@ const UserControlSettings = () => {
         usePagination
     );
 
-
     return (
-
         <div className='bg-white mt-3 px-2'>
             <div>
-                <Link to='user-control'>  <img src={addIcon} alt="" className=" m-2" width={50} /></Link>
+                <Link to='new-sliders'>  <img src={addIcon} alt="" className=" m-2" width={50} /></Link>
             </div>
             <div className='d-flex justify-content-between mx-auto px-1 w-100'>
                 <div className="align-items-center d-flex gap-1">
@@ -163,7 +170,7 @@ const UserControlSettings = () => {
                 </div>
             </div>
 
-            <div className='table-responsive'>
+            <div className='table-responsive '>
                 <table {...getTableProps()} className="table table-striped">
                     <thead>
                         {headerGroups.map(headerGroup => (
@@ -188,46 +195,32 @@ const UserControlSettings = () => {
                                         <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                     ))}
                                 </tr>
+
                             );
                         })}
                     </tbody>
                 </table>
+
                 <Modal show={show} onHide={handleClose} className="w-100 mx-auto">
                     <Modal.Header closeButton>
                         <Modal.Title>Delivery Charge Settings</Modal.Title>
                     </Modal.Header>
 
-                    {/* Form with input fields */}
                     <Form onSubmit={handleSubmit}>
                         <Modal.Body>
-                            <Form.Group controlId="name">
-                                <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Name" />
+                            <Form.Group controlId="Title">
+                                <Form.Label>Title</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter Title"
+                                    value={formData.title}
+                                    onChange={handleInputChange}
+                                />
                             </Form.Group>
 
-                            <Form.Group controlId="designation">
-                                <Form.Label>Designation</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Designation" />
-                            </Form.Group>
-
-                            <Form.Group controlId="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Email" />
-                            </Form.Group>
-
-                            <Form.Group controlId="contact">
-                                <Form.Label>Contact</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Contact" />
-                            </Form.Group>
-
-                            <Form.Group controlId="role">
-                                <Form.Label>Role</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Role" />
-                            </Form.Group>
-
-                            <Form.Group controlId="access">
-                                <Form.Label>Access</Form.Label>
-                                <Form.Control type="text" placeholder="Enter Access" />
+                            <Form.Group controlId="Image">
+                                <Form.Label>Image</Form.Label>
+                                <Form.Control type="file" onChange={handleInputChange} />
                             </Form.Group>
                         </Modal.Body>
 
@@ -243,8 +236,7 @@ const UserControlSettings = () => {
                 </Modal>
             </div>
         </div>
-
     );
 };
 
-export default UserControlSettings;
+export default SliderSetting;

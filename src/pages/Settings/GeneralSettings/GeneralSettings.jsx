@@ -106,6 +106,8 @@ const GeneralSettings = () => {
                         <br />
                         {headerLogo1 && (
                             <img
+                                width={300}
+                                height={200}
                                 src={URL.createObjectURL(headerLogo1)}
                                 alt="Header Logo 1"
                                 className="selected-image"
@@ -124,6 +126,8 @@ const GeneralSettings = () => {
                         <br />
                         {footerLogo && (
                             <img
+                                width={300}
+                                height={200}
                                 src={URL.createObjectURL(footerLogo)}
                                 alt="Footer Logo"
                                 className="selected-image"

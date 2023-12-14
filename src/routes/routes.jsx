@@ -6,11 +6,11 @@ import WithNavbar from "../layouts/WithNavbar";
 import Home from "../pages/home";
 
 import ErrorPage from "../Utilites/ErrorPage";
-import Settings from './../pages/commons/Settings/Settings';
+import Settings from '../pages/Settings/Settings';
 
-import AddNewCharge from "../pages/commons/Settings/DeliverySettings/AddNewCharge";
-import AddNewSlider from './../pages/commons/Settings/SliderSetting/AddNewSlider';
-import AddNewUser from "../pages/commons/Settings/UserControlSettings/AddNewUser";
+import AddNewCharge from "../pages/Settings/DeliverySettings/AddNewCharge";
+import AddNewSlider from '../pages/Settings/SliderSetting/AddNewSlider';
+import AddNewUser from "../pages/Settings/UserControlSettings/AddNewUser";
 import Category from "../pages/Category/Category";
 import Products from "../pages/Products/Products";
 import NewCategory from "../pages/Category/NewCategory";

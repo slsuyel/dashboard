@@ -126,7 +126,7 @@ const NewCategory = () => {
                         </div>
                         <div>
                             <button className='btn-danger border-0 py-1 text-white'>
-                                <Link to='/dashboard/settings' className='p-1 text-decoration-none text-white'>
+                                <Link to='/dashboard/category' className='p-1 text-decoration-none text-white'>
                                     Cancel
                                 </Link>
                             </button>

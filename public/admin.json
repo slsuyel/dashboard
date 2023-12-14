@@ -1,0 +1,11 @@
+{
+    "admin": {
+        "path": [
+            "dashboard",
+            "profile",
+            "settings",
+            "settings/new-delivery",
+            "settings/new-sliders"
+        ]
+    }
+}

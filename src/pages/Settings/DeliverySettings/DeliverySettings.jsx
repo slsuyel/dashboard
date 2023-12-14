@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { useTable, useSortBy, usePagination } from 'react-table';
-import addIcon from '../../../../assets/icons/png/+Add.png';
+import addIcon from '../../../assets/icons/png/+Add.png';
 import { Link } from 'react-router-dom';
 
 const data = [

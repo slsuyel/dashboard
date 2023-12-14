@@ -3,7 +3,7 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-import defultSlider from '../../../../assets/images/multiple-image-slider-wordpress.png';
+import defultSlider from '../../../assets/images/multiple-image-slider-wordpress.png';
 
 const AddNewSlider = () => {
     const [formData, setFormData] = useState({

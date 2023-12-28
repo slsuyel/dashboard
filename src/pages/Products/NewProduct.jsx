@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -20,6 +20,27 @@ const NewProduct = () => {
     const [isbn, setIsbn] = useState('');
     const [featuresImage, setFeaturesImage] = useState(null);
 
+    useEffect(() => {
+        const draftData = JSON.parse(localStorage.getItem('draftData'));
+
+        if (draftData) {
+            setProductName(draftData.productName || '');
+            setShortDescription(draftData.shortDescription || '');
+            setContent(draftData.content || '');
+            setPrice(draftData.price || '');
+            setDiscount(draftData.discount || false);
+            setDiscountType(draftData.discountType || '');
+            setCategory(draftData.category || '');
+            setWriters(draftData.writers || '');
+            setCoverBy(draftData.coverBy || '');
+            setTotalPages(draftData.totalPages || '');
+            setStock(draftData.stock || '');
+            setWeight(draftData.weight || '');
+            setPublishedDate(draftData.publishedDate || '');
+            setIsbn(draftData.isbn || '');
+            setFeaturesImage(draftData.featuresImage || null);
+        }
+    }, []);
 
     const modules = {
         toolbar: [
@@ -30,6 +51,31 @@ const NewProduct = () => {
             [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
             ['clean']
         ],
+    };
+
+
+    const handleDraftNow = () => {
+        // Save form data to localStorage
+        const draftData = {
+            productName,
+            shortDescription,
+            content,
+            price,
+            discount,
+            discountType,
+            category,
+            writers,
+            coverBy,
+            totalPages,
+            stock,
+            weight,
+            publishedDate,
+            isbn,
+            featuresImage,
+        };
+
+        localStorage.setItem('draftData', JSON.stringify(draftData));
+        alert('Draft saved successfully!');
     };
 
     const handlePublishNow = () => {
@@ -90,7 +136,7 @@ const NewProduct = () => {
 
                     <div className='col-md-5'>
                         <div className='d-flex my-2 gap-4 justify-content-center my-2'>
-                            <button className='border-white btn btn-warning fs-5 fw-bold text-white'>Draft Now</button>
+                            <button onClick={handleDraftNow} className='border-white btn btn-warning fs-5 fw-bold text-white'>Draft Now</button>
                             <button className='border-white btn btn-success fs-5 fw-bold text-white' onClick={handlePublishNow}>
                                 Publish Now
                             </button>

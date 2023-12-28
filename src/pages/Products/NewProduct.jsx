@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import Swal from 'sweetalert2';
 
 const NewProduct = () => {
     const [productName, setProductName] = useState('');
@@ -9,8 +10,8 @@ const NewProduct = () => {
     const [content, setContent] = useState('');
     const [price, setPrice] = useState('');
     const [discount, setDiscount] = useState(false);
-    const [discountType, setDiscountType] = useState('');
-    const [category, setCategory] = useState('');
+    const [discountType, setDiscountType] = useState('Flat Discount');
+    const [category, setCategory] = useState('Academic Book');
     const [writers, setWriters] = useState('');
     const [coverBy, setCoverBy] = useState('');
     const [totalPages, setTotalPages] = useState('');
@@ -75,10 +76,16 @@ const NewProduct = () => {
         };
 
         localStorage.setItem('draftData', JSON.stringify(draftData));
-        alert('Draft saved successfully!');
+
+        Swal.fire({
+
+            text: "Draft saved successfully!",
+            icon: "success"
+        });
     };
 
     const handlePublishNow = () => {
+        localStorage.removeItem('draftData');
         console.log('Product Name:', productName);
         console.log('Short Description:', shortDescription);
         console.log('Details:', content);
@@ -165,19 +172,21 @@ const NewProduct = () => {
                         <div className='align-items-center d-flex my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>
                             <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
-                                <option value="">Academic Book</option>
-                                <option value="">Creative Book</option>
-                                <option value="">Others</option>
+                                <option value="Academic Book">Academic Book</option>
+                                <option value="Creative Book">Creative Book</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
+
                         <div className='align-items-center d-flex my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Writers:</label>
                             <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
-                                <option value="">Writers 1</option>
-                                <option value="">Writers 2</option>
-                                <option value="">Writers 3</option>
+                                <option value="Writers 1">Writers 1</option>
+                                <option value="Writers 2">Writers 2</option>
+                                <option value="Writers 3">Writers 3</option>
                             </select>
                         </div>
+
 
                         <div className='align-items-center d-flex my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Cover by:</label>

@@ -13,7 +13,7 @@ const data = [
         "writersNameEn": "John Doe",
         "writersNameBn": "জন ডো",
         "contact_no": "+1 (555) 123-4567",
-        "image": "path/to/image1.jpg",
+        "image": "https://picsum.photos/500/300?random=1",
         'writerType': 'কবি',
         "checkbox": false
     },
@@ -23,7 +23,7 @@ const data = [
         "writersNameEn": "Jane Smith",
         "writersNameBn": "জেন স্মিথ",
         "contact_no": "+44 20 7946 0958",
-        "image": "path/to/image2.jpg",
+        "image": "https://picsum.photos/500/300?random=12",
         'writerType': 'গল্পকার',
         "checkbox": false
     },
@@ -33,7 +33,7 @@ const data = [
         "writersNameEn": "Ahmed Khan",
         "writersNameBn": "আহমেদ খান",
         "contact_no": "+91 98765 43210",
-        "image": "path/to/image3.jpg",
+        "image": "https://picsum.photos/500/300?random=14",
         'writerType': 'সাহিত্যিক',
         "checkbox": false
     },
@@ -43,7 +43,7 @@ const data = [
         "writersNameEn": "Maria Rodriguez",
         "writersNameBn": "মারিয়া রড্রিগেজ",
         "contact_no": "+55 11 98765-4321",
-        "image": "path/to/image4.jpg",
+        "image": "https://picsum.photos/500/300?random=15",
         'writerType': 'প্রাবন্ধিক',
         "checkbox": false
     }

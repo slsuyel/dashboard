@@ -21,6 +21,7 @@ import Customers from "../pages/Customers/Customers";
 import Visitor from "../pages/Visitor/Visitor";
 import Multimedia from "../pages/Multimedia/Multimedia";
 import Pages from "../pages/Pages/Pages";
+import NewProduct from "../pages/Products/NewProduct";
 
 export const router = createBrowserRouter([
     {
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
             {
                 path: "products",
                 element: <Products />,
+            },
+            {
+                path: "products/new",
+                element: <NewProduct />,
             },
             {
                 path: "writers",

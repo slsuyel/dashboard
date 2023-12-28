@@ -3,7 +3,8 @@ import Breadcrumb from '../../Utilites/Breadcrumb';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Swal from 'sweetalert2';
-
+import add from '../../assets/icons/png/Add-icon.png'
+import AddWriterAndCategory from './AddWriterAndCategory';
 const NewProduct = () => {
     const [productName, setProductName] = useState('');
     const [shortDescription, setShortDescription] = useState('');
@@ -20,6 +21,20 @@ const NewProduct = () => {
     const [publishedDate, setPublishedDate] = useState('');
     const [isbn, setIsbn] = useState('');
     const [featuresImage, setFeaturesImage] = useState(null);
+    const [show, setShow] = useState(false);
+
+    const [addItem, setAddItem] = useState('')
+
+    const handleShow = (data) => {
+        setAddItem(data)
+        setShow(true)
+    };
+
+
+    const writerList = ['Writer1', 'Writer2', 'Writer3', 'Writer4'];
+    const bookCategory = ['Academic Book', 'Creative Book', 'Mystery Book'];
+
+
 
     useEffect(() => {
         const draftData = JSON.parse(localStorage.getItem('draftData'));
@@ -164,27 +179,34 @@ const NewProduct = () => {
                         <div className='align-items-center d-flex my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
                             <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
-                                <option value="">Flat Discount:</option>
-                                <option value="">Percentage:</option>
+                                <option value="Flat Discount">Flat Discount:</option>
+                                <option value="Percentage">Percentage:</option>
                             </select>
                         </div>
 
-                        <div className='align-items-center d-flex my-2'>
+                        <div className='align-items-center d-flex gap-2 my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>
-                            <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
-                                <option value="Academic Book">Academic Book</option>
-                                <option value="Creative Book">Creative Book</option>
-                                <option value="Others">Others</option>
-                            </select>
+                            <div className='w-100'>
+                                <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                    {bookCategory.map((w) => <option value={w}>{w}</option>)}
+                                </select>
+                            </div>
+                            <div className=''>
+                                <img src={add} alt="" width={30} style={{ cursor: 'pointer' }} onClick={() => handleShow('Category')} />
+                            </div>
                         </div>
 
-                        <div className='align-items-center d-flex my-2'>
+                        <div className='align-items-center d-flex gap-2 my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Writers:</label>
-                            <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
-                                <option value="Writers 1">Writers 1</option>
-                                <option value="Writers 2">Writers 2</option>
-                                <option value="Writers 3">Writers 3</option>
-                            </select>
+                            <div className='w-100'>
+                                <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
+                                    {writerList.map((w) => <option value={w}>{w}</option>)}
+                                </select>
+
+                            </div>
+                            <div className=''>
+                                <img src={add} onClick={() => handleShow('Writer')} alt="" width={30} style={{ cursor: 'pointer' }} />
+                            </div>
                         </div>
 
 
@@ -226,7 +248,7 @@ const NewProduct = () => {
                             <input type="file" className="form-control" onChange={(e) => setFeaturesImage(e.target.files[0])} />
                         </div>
                     </div>
-
+                    <AddWriterAndCategory show={show} setShow={setShow} addItem={addItem} />
                 </div>
             </div>
         </div>

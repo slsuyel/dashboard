@@ -110,7 +110,7 @@ const Orders = () => {
             <div className="content-header">
                 <Breadcrumb page={'Orders'} />
 
-                <div className="container d-flex gap-4 justify-content-center my-3">
+                <div className="container d-flex gap-4 flex-wrap justify-content-center my-3">
                     <button type="button" className="btn btn-secondary">
                         All
                     </button>
@@ -153,56 +153,57 @@ const Orders = () => {
                         <button className="border btn rounded" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
                     </div>
                 </div>
-                <table className="table">
-                    <thead>
-                        <tr className='text-center'>
-                            <th>#</th>
-                            <th className='text-nowrap text-secondary'>Document <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Order No <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Order Date <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Product Name <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Items <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Payment Method <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Status <SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Action</th>
+                <div className='table-responsive'>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr className='text-center'>
+                                <th>#</th>
+                                <th className='text-nowrap text-secondary'>Document <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Order No <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Order Date <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Product Name <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Items <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Payment Method <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Status <SortIcon /></th>
+                                <th className='text-nowrap text-secondary'>Action</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((order, index) => (
-                            <tr className='text-center' key={order.id}>
-                                <td>{index + 1}</td>
-                                <td>{order.document}</td>
-                                <td>{order.OrderNo}</td>
-                                <td>{order.OrderDate}</td>
-                                <td>{order.productName}</td>
-                                <td>{order.items}</td>
-                                <td>{order.price}</td>
-                                <td>{order.paymentMethod}</td>
-                                <td>{order.status}</td>
-                                <td>
-                                    <button
-                                        onClick={() => handleOrderDetails(order.id)}
-                                        className="border btn btn-sm mb-0 text-nowrap text-white"
-                                        style={{ background: "#48b7d7", width: '110px' }}
-                                    >
-                                        Order Details
-                                    </button>
-                                    <select name="statusDropdown" className='bg-warning border-secondary p-1 rounded-1' id="statusDropdown" onChange={(e) => handleChangeStatus(e, order.id)}
-                                        style={{ width: '110px', fontSize: '12px' }}>
-                                        <option value="" selected disabled>Change Status</option>
-                                        <option value="Ready to ship">Ready to ship</option>
-                                        <option value="Shipped">Shipped</option>
-                                        <option value="Delivered">Delivered</option>
-                                        <option value="Returned">Returned</option>
-                                        <option value="Refund">Refund</option>
-                                    </select>
-                                </td>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {data.map((order, index) => (
+                                <tr className='text-center' key={order.id}>
+                                    <td>{index + 1}</td>
+                                    <td>{order.document}</td>
+                                    <td>{order.OrderNo}</td>
+                                    <td>{order.OrderDate}</td>
+                                    <td>{order.productName}</td>
+                                    <td>{order.items}</td>
+                                    <td>{order.price}</td>
+                                    <td>{order.paymentMethod}</td>
+                                    <td>{order.status}</td>
+                                    <td>
+                                        <button
+                                            onClick={() => handleOrderDetails(order.id)}
+                                            className="border btn btn-sm mb-0 text-nowrap text-white" style={{ background: "#48b7d7", width: '110px' }}
+                                        >
+                                            Order Details
+                                        </button>
+                                        <select name="statusDropdown" className='bg-warning border-secondary p-1 rounded-1' id="statusDropdown" onChange={(e) => handleChangeStatus(e, order.id)}
+                                            style={{ width: '110px', fontSize: '12px' }}>
+                                            <option value="" selected disabled>Change Status</option>
+                                            <option value="Ready to ship">Ready to ship</option>
+                                            <option value="Shipped">Shipped</option>
+                                            <option value="Delivered">Delivered</option>
+                                            <option value="Returned">Returned</option>
+                                            <option value="Refund">Refund</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
 

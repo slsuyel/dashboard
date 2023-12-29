@@ -23,6 +23,7 @@ import Multimedia from "../pages/Multimedia/Multimedia";
 import Pages from "../pages/Pages/Pages";
 import NewProduct from "../pages/Products/NewProduct";
 import OrdersListView from "../pages/Customers/OrdersListView";
+import FeaturedCategory from "../pages/FeaturedCategory/FeaturedCategory";
 
 export const router = createBrowserRouter([
     {
@@ -105,6 +106,10 @@ export const router = createBrowserRouter([
             {
                 path: "visitor",
                 element: <Visitor />,
+            },
+            {
+                path: "featured-category",
+                element: <FeaturedCategory />,
             },
             {
                 path: "multimedia",

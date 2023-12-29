@@ -115,18 +115,18 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="nav-item border-bottom nav-item rounded-0">
-              <Link to="/dashboard/ebmeevgdcnvi" className="nav-link">
+              <Link to="/dashboard/featured-category" className="nav-link">
                 <div className="custom-li-item">
                   <img src={BoisorbouttomupoharIcon} alt="" width={35} />
-                  <p className="ms-2">বই সর্বোত্তম উপহার</p>
+                  <p className="ms-2">Featured Category</p>
                 </div>
               </Link>
             </li>
             <li className="nav-item border-bottom nav-item rounded-0">
-              <Link to="/dashboard/cywckvkikieb" className="nav-link">
+              <Link to="/dashboard/download" className="nav-link">
                 <div className="custom-li-item">
                   <img src={PuthiprokasherBoiIcon} alt="" width={35} />
-                  <p className="ms-2">পুথিপ্রকাশের বই</p>
+                  <p className="ms-2">Download</p>
                 </div>
               </Link>
             </li>

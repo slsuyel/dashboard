@@ -190,10 +190,10 @@ input:checked+.dis-slider:before {
 }
 
 .custom-form-control {
-  width: 130px;
+  width: 125px;
   font-size: 15px;
   padding: 3px;
-  margin-right: 13px;
+  /* margin-right: 8px; */
   border-radius: 5px;
   background: transparent;
   border: 1px solid burlywood;

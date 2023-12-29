@@ -151,59 +151,61 @@ const Products = () => {
                 <div className='table-responsive'>
 
                     {/*      Quick Action */}
-                    <table className="table">
-                        <thead>
-                            <tr className='text-center'>
-                                <th>#</th>
-                                <th className='text-nowrap text-secondary'>P. ID <SortIcon /></th>
+                    <div className='table-responsive '>
+                        <table className="table table-striped">
+                            <thead>
+                                <tr className='text-center'>
+                                    <th>#</th>
+                                    <th className='text-nowrap text-secondary'>P. ID <SortIcon /></th>
 
-                                <th className='text-nowrap text-secondary'>P. Name <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Stock<SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Categories  <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Image <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Date <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Quick Action <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>
-                                    <input
-                                        type="checkbox"
-                                        checked={selectAll}
-                                        onChange={handleSelectAllChange}
-                                    />
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map((product, index) => (
-                                <tr className='text-center' key={product.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{product.id}</td>
-
-                                    <td>{product.name}</td>
-                                    <td>{product.price} <button className='border-0'><img src={add} width={18} alt="" /></button></td>
-                                    <td>{product.stock}<button className='border-0'><img src={add} width={18} alt="" /></button></td>
-
-                                    <td> {product.categories.map(category => (
-                                        <span key={category}>{category},</span>))}<button className='border-0'><img src={add} width={18} alt="" /></button>
-                                    </td>
-                                    <td><img src={product.image} alt={`Photo of ${product.name}`} style={{ width: '50px', height: '50px' }} /></td>
-                                    <td>{product.date}</td>
-                                    <td>
-                                        <button className='border-0'>  <img src={qr} alt="" className='img-fluid' width={50} /></button>
-                                        <button className='border-0'><img src={flip} alt="" className='img-fluid' width={50} /></button>
-                                    </td>
-                                    <td>
-                                        {/* Individual checkbox */}
+                                    <th className='text-nowrap text-secondary'>P. Name <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Stock<SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Categories  <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Image <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Date <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>Quick Action <SortIcon /></th>
+                                    <th className='text-nowrap text-secondary'>
                                         <input
                                             type="checkbox"
-                                            checked={selectedIds.includes(product.id)}
-                                            onChange={() => handleCheckboxChange(product.id)}
+                                            checked={selectAll}
+                                            onChange={handleSelectAllChange}
                                         />
-                                    </td>
+                                    </th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {data.map((product, index) => (
+                                    <tr className='text-center' key={product.id}>
+                                        <td>{index + 1}</td>
+                                        <td>{product.id}</td>
+
+                                        <td>{product.name}</td>
+                                        <td>{product.price} <button className='border-0'><img src={add} width={18} alt="" /></button></td>
+                                        <td>{product.stock}<button className='border-0'><img src={add} width={18} alt="" /></button></td>
+
+                                        <td> {product.categories.map(category => (
+                                            <span key={category}>{category},</span>))}<button className='border-0'><img src={add} width={18} alt="" /></button>
+                                        </td>
+                                        <td><img src={product.image} alt={`Photo of ${product.name}`} style={{ width: '50px', height: '50px' }} /></td>
+                                        <td>{product.date}</td>
+                                        <td className='d-flex gap-2'>
+                                            <button className='border-0'>  <img src={qr} alt="" className='img-fluid' width={50} /></button>
+                                            <button className='border-0'><img src={flip} alt="" className='img-fluid' width={50} /></button>
+                                        </td>
+                                        <td>
+                                            {/* Individual checkbox */}
+                                            <input
+                                                type="checkbox"
+                                                checked={selectedIds.includes(product.id)}
+                                                onChange={() => handleCheckboxChange(product.id)}
+                                            />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
             </div>

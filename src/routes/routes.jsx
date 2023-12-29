@@ -22,6 +22,7 @@ import Visitor from "../pages/Visitor/Visitor";
 import Multimedia from "../pages/Multimedia/Multimedia";
 import Pages from "../pages/Pages/Pages";
 import NewProduct from "../pages/Products/NewProduct";
+import OrdersListView from "../pages/Customers/OrdersListView";
 
 export const router = createBrowserRouter([
     {
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
             {
                 path: "customers",
                 element: <Customers />,
+            },
+            {
+                path: "customers/details",
+                element: <OrdersListView />,
             },
             {
                 path: "visitor",

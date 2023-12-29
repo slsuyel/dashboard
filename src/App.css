@@ -188,3 +188,13 @@ input:checked+.dis-slider:before {
 .dis-slider.dis-round:before {
   border-radius: 50%;
 }
+
+.custom-form-control {
+  width: 130px;
+  font-size: 15px;
+  padding: 3px;
+  margin-right: 13px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid burlywood;
+}

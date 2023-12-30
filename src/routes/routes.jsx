@@ -25,6 +25,7 @@ import NewProduct from "../pages/Products/NewProduct";
 import OrdersListView from "../pages/Customers/OrdersListView";
 import FeaturedCategory from "../pages/FeaturedCategory/FeaturedCategory";
 import Download from "../pages/Download/Download";
+import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
 
 export const router = createBrowserRouter([
     {
@@ -123,6 +124,10 @@ export const router = createBrowserRouter([
             {
                 path: "download",
                 element: <Download />,
+            },
+            {
+                path: "download/new",
+                element: <NewDocumentAdd />,
             },
 
         ],

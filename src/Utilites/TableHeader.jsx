@@ -1,14 +1,50 @@
 import { Link } from 'react-router-dom';
 import addIcon from '../assets/icons/png/+Add.png';
-const TableHeader = ({ slug }) => {
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+
+const TableHeader = ({ slug, selectedIds, children }) => {
+    const [selectedOption, setSelectedOption] = useState('Edit');
+
+    const handleApplyClick = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: `Yes, ${selectedOption} it!`
+        }).then((result) => {
+            if (result.isConfirmed) {
+                if (selectedOption === 'Edit' && selectedIds.length > 0) {
+                    console.log('Edit IDs:', selectedIds);
+                } else if (selectedOption === 'Delete' && selectedIds.length > 0) {
+                    console.log('Delete IDs:', selectedIds);
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                }
+            }
+        });
+    };
+    const handleDropdownChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+
     return (
         <>
 
             <div className='mt-3 '>
-                <Link to={`/dashboard/${slug}`}>
+
+                {children ? children : <Link to={`/dashboard/${slug}`}>
 
                     <img src={addIcon} alt="" className="btn m-2 p-1" width={50} />
-                </Link>
+                </Link>}
+
             </div>
 
             <div className='d-flex justify-content-between mx-auto px-1 w-100'>

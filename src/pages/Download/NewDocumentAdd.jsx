@@ -34,7 +34,7 @@ const NewDocumentAdd = () => {
     return (
         <>
             <Download>
-                <BackBtn />
+                <BackBtn slug={'download'} />
             </Download>
 
             <Modal show={show} onHide={handleClose}>

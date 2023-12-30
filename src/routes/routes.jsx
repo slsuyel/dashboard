@@ -26,6 +26,7 @@ import OrdersListView from "../pages/Customers/OrdersListView";
 import FeaturedCategory from "../pages/FeaturedCategory/FeaturedCategory";
 import Download from "../pages/Download/Download";
 import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
+import PhotoCategoryAdd from "../pages/Multimedia/PhotoCategoryAdd";
 
 export const router = createBrowserRouter([
     {
@@ -116,6 +117,10 @@ export const router = createBrowserRouter([
             {
                 path: "multimedia",
                 element: <Multimedia />,
+            },
+            {
+                path: "multimedia/add",
+                element: <PhotoCategoryAdd />,
             },
             {
                 path: "pages",

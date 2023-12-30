@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SortIcon from '../../Utilites/SortIcon';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import TableHeader from '../../Utilites/TableHeader';
+import { Link } from 'react-router-dom';
+import Loader from '../../components/Loader';
 
 const data = [
     {
@@ -52,6 +54,7 @@ const Multimedia = ({ children }) => {
     return (
         <div className="content-wrapper">
             <div className="content-header">
+                <Loader />
                 <Breadcrumb page={'Multimedia'} />
                 <>
                     {children ? (
@@ -88,7 +91,9 @@ const Multimedia = ({ children }) => {
                                     <td>{product.categoryName}</td>
                                     <td>{product.photoQuantity}</td>
                                     <td>{product.modifiedDate}</td>
-                                    <td><button className='bg-warning border-warning fw-bold rounded-1 text-white w-50'>View</button></td>
+                                    <td>
+                                        <Link className='bg-warning border-secondary-subtle border-warning btn btn-sm fw-bold px-3 rounded-2 text-decoration-none text-white' to={'/dashboard/multimedia/photo-gallery'} >   View</Link>
+                                    </td>
                                     <td>
                                         <input
                                             type="checkbox"

@@ -35,6 +35,7 @@ const PhotoCategoryAdd = () => {
 
     return (
         <>
+
             <Multimedia>
                 <div className='align-items-center d-flex gap-3'>
                     <BackBtn slug={'multimedia'} />

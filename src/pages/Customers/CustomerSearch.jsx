@@ -63,7 +63,7 @@ const CustomerSearch = () => {
 
 
     return (
-        <div class="container my-5">
+        <div class="container mb-3">
             <form class="d-flex gap-3 justify-content-center flex-wrap">
                 <div class="custom-form-group custom-flex-fill">
                     <input

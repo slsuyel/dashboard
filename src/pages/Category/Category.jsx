@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import addIcon from '../../assets/icons/png/+Add.png';
 import { Link } from "react-router-dom";
 import { useTable, useSortBy, usePagination } from 'react-table';
+import Breadcrumb from "../../Utilites/Breadcrumb";
 
 const data = [
     {
@@ -146,7 +147,7 @@ const Category = () => {
     return (
         <div className="content-wrapper">
             <div className="content-header">
-
+                <Breadcrumb page={'Category'} />
                 <div className='bg-white mt-3 px-2'>
                     <div>
                         <Link to='add-new'>  <img src={addIcon} alt="" className=" m-2" width={50} /></Link>

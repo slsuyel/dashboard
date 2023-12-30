@@ -3,6 +3,7 @@ import Breadcrumb from '../../Utilites/Breadcrumb';
 import CustomerSearch from './CustomerSearch';
 import SortIcon from '../../Utilites/SortIcon';
 import { Link } from 'react-router-dom';
+import BackBtn from '../Download/BackBtn';
 const data = [
     {
         "id": 1,
@@ -49,8 +50,11 @@ const OrdersListView = () => {
         <div className="content-wrapper">
             <div className="content-header">
                 <Breadcrumb page={'Customers details'} />
-                <Link className="border btn btn-sm mb-0 text-nowrap text-white"
-                    style={{ background: "#48b7d7", width: '110px' }} to={'/dashboard/customers'}><i class="fa-solid fa-chevron-left"></i> Back </Link>
+                {/*  <Link className="border btn btn-sm mb-0 text-nowrap text-white"
+                    style={{ background: "#48b7d7", width: '110px' }} to={'/dashboard/customers'}><i class="fa-solid fa-chevron-left"></i> Back </Link> */}
+
+                <BackBtn slug={'customers'} />
+
                 <CustomerSearch />
                 <hr />
 

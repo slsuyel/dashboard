@@ -12,6 +12,7 @@ const NewProduct = () => {
     const [price, setPrice] = useState('');
     const [discount, setDiscount] = useState(false);
     const [discountType, setDiscountType] = useState('Flat Discount');
+    const [discountRate, setDiscountRate] = useState(0);
     const [category, setCategory] = useState('Academic Book');
     const [writers, setWriters] = useState('');
     const [coverBy, setCoverBy] = useState('');
@@ -22,6 +23,7 @@ const NewProduct = () => {
     const [isbn, setIsbn] = useState('');
     const [featuresImage, setFeaturesImage] = useState(null);
     const [show, setShow] = useState(false);
+    const [slug, setSlug] = useState('');
 
     const [addItem, setAddItem] = useState('')
 
@@ -75,10 +77,12 @@ const NewProduct = () => {
         const draftData = {
             productName,
             shortDescription,
+            slug,
             content,
             price,
             discount,
             discountType,
+            discountRate,
             category,
             writers,
             coverBy,
@@ -103,11 +107,12 @@ const NewProduct = () => {
         localStorage.removeItem('draftData');
         console.log('Product Name:', productName);
         console.log('Short Description:', shortDescription);
+        console.log('Product slug:', slug);
         console.log('Details:', content);
         console.log('Price:', price);
         console.log('Discount:', discount);
         console.log('Discount Type:', discountType);
-        console.log('Category:', category);
+        console.log('Discount Rate:', discountRate,);
         console.log('Writers:', writers);
         console.log('Cover By:', coverBy);
         console.log('Total Pages:', totalPages);
@@ -118,7 +123,12 @@ const NewProduct = () => {
         console.log('featuresImage:', featuresImage);
 
     };
-
+    const makeSlug = (text) => {
+        return text
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9-]/g, '');
+    };
 
     return (
         <div className="content-wrapper">
@@ -147,6 +157,19 @@ const NewProduct = () => {
                                     onChange={(e) => setShortDescription(e.target.value)}
                                 />
                             </div>
+
+                            <div className="form-group">
+                                <label style={{ color: '#48b7d7' }} htmlFor="slug">Product Slug</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="slug"
+                                    value={slug}
+                                    onChange={(e) => setSlug(makeSlug(e.target.value))}
+                                />
+
+                            </div>
+
                             <div className="form-group">
                                 <label style={{ color: '#48b7d7' }} htmlFor="details">Details</label>
                                 <ReactQuill theme="snow" className='form-control'
@@ -176,13 +199,21 @@ const NewProduct = () => {
                             </label>
                         </div>
 
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
-                            <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
-                                <option value="Flat Discount">Flat Discount:</option>
-                                <option value="Percentage">Percentage:</option>
-                            </select>
+                        <div className={`${!discount ? 'd-none' : ''}`}>
+                            <div className='align-items-center d-flex my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
+                                <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
+                                    <option value="Flat Discount">Flat Discount:</option>
+                                    <option value="Percentage">Percentage:</option>
+                                </select>
+                            </div>
+
+                            <div className='align-items-center d-flex my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
+                                <input type="number" className="form-control mx-4" value={discountRate} onChange={(e) => setDiscountRate(e.target.value)} />
+                            </div>
                         </div>
+
 
                         <div className='align-items-center d-flex gap-2 my-2'>
                             <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>

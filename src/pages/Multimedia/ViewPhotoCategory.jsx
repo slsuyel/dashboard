@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import TableHeader from '../../Utilites/TableHeader';
 import SortIcon from '../../Utilites/SortIcon';
-import Loader from '../../components/Loader';
 
 const data = [
     {
@@ -51,7 +50,7 @@ const ViewPhotoCategory = () => {
     return (
         <div className="content-wrapper">
             <div className="content-header">
-                <Loader />
+
                 <Breadcrumb page={'Multimedia-Photo Gallery'} />
 
                 <TableHeader slug={'multimedia/add'} selectedIds={selectedIds} setSelectedIds={setSelectedIds} />

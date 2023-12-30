@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 const Breadcrumb = ({ page }) => {
 
@@ -7,6 +8,7 @@ const Breadcrumb = ({ page }) => {
 
     return (
         <div className="container-fluid ">
+            <Loader />
             <div className="row mb-2">
                 <div className="col-sm-6 ">
                     <h1 className="m-0 text-nil">{page}</h1>

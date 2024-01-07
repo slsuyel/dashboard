@@ -28,12 +28,12 @@ const NewCategory = () => {
     return (
         <div className="content-wrapper">
             <div className="content-header">
-                <h2>Add New Category</h2>
+                <h2 className='fs-4 m-2'>Add New Category</h2>
             </div>
             <div className="content-body row w-100 mx-auto ">
                 <form onSubmit={handleSubmit} className='row col-10 mx-auto'>
                     <div className="mb-3 col-md-6">
-                        <label htmlFor="categoryName" className="form-label">
+                        <label htmlFor="categoryName" className="form-label text-66 ">
                             Category Name:
                         </label>
                         <input
@@ -46,7 +46,7 @@ const NewCategory = () => {
                         />
                     </div>
                     <div className="mb-3 col-md-6">
-                        <label htmlFor="categorySlug" className="form-label">
+                        <label htmlFor="categorySlug" className="form-label text-66 ">
                             Category Slug:
                         </label>
                         <input
@@ -59,7 +59,7 @@ const NewCategory = () => {
                         />
                     </div>
                     <div className="mb-3 col-md-6">
-                        <label htmlFor="categoryType" className="form-label">
+                        <label htmlFor="categoryType" className="form-label text-66 ">
                             Category Type:
                         </label>
                         <select
@@ -79,7 +79,7 @@ const NewCategory = () => {
                     </div>
                     {formData.categoryType !== 'Primary' && (
                         <div className="mb-3 col-md-6">
-                            <label htmlFor="category" className="form-label">
+                            <label htmlFor="category" className="form-label text-66 ">
                                 Category:
                             </label>
                             <input
@@ -93,7 +93,7 @@ const NewCategory = () => {
                         </div>
                     )}
                     <div className="mb-3 col-md-6">
-                        <label htmlFor="about" className="form-label">
+                        <label htmlFor="about" className="form-label text-66 ">
                             About:
                         </label>
                         <textarea
@@ -105,7 +105,7 @@ const NewCategory = () => {
                         ></textarea>
                     </div>
                     <div className="mb-3 col-md-6">
-                        <label htmlFor="file" className="form-label">
+                        <label htmlFor="file" className="form-label text-66 ">
                             Upload Image:
                         </label>
                         <input
@@ -120,12 +120,12 @@ const NewCategory = () => {
 
                     <div className='align-items-center d-flex gap-3 my-2'>
                         <div>
-                            <Button className='border-0 btn btn-primary px-3 py-1 rounded-0 text-white' type="submit">
+                            <Button className='border-0 btn btn-success fw-bold px-3 py-1' type="submit">
                                 Save
                             </Button>
                         </div>
                         <div>
-                            <button className='btn-danger border-0 py-1 text-white'>
+                            <button className='rounded btn-danger border-0 py-1 text-white'>
                                 <Link to='/dashboard/category' className='p-1 text-decoration-none text-white'>
                                     Cancel
                                 </Link>

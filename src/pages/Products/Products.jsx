@@ -9,6 +9,7 @@ import add from '../../assets/icons/png/Add-icon.png';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import TableHeader from '../../Utilites/TableHeader';
+import QrModal from './QrModal';
 
 const data = [
     {
@@ -42,6 +43,9 @@ const data = [
 const Products = () => {
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState({});
+
 
     const handleCheckboxChange = (id) => {
         const updatedIds = [...selectedIds];
@@ -63,6 +67,13 @@ const Products = () => {
 
 
 
+    const handleShow = (product) => {
+        setSelectedProduct(product)
+        setShowModal(true);
+    };
+    const handleClose = () => setShowModal(false);
+
+
     return (
         <div className="content-wrapper">
             <div className="content-header">
@@ -77,7 +88,7 @@ const Products = () => {
                     <div className='table-responsive '>
                         <table className="table table-striped">
                             <thead>
-                                <tr className='text-center'>
+                                <tr className=''>
                                     <th>#</th>
                                     <th className='text-nowrap text-secondary'>P. ID <SortIcon /></th>
 
@@ -99,21 +110,25 @@ const Products = () => {
                             </thead>
                             <tbody>
                                 {data.map((product, index) => (
-                                    <tr className='text-center' key={product.id}>
+                                    <tr className='text-center font-td' key={product.id}>
                                         <td>{index + 1}</td>
                                         <td>{product.id}</td>
 
                                         <td>{product.name}</td>
-                                        <td>{product.price} <button className='border-0'><img src={add} width={18} alt="" /></button></td>
-                                        <td>{product.stock}<button className='border-0'><img src={add} width={18} alt="" /></button></td>
+                                        <td>{product.price} <button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
+                                        <td>{product.stock}<button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
 
-                                        <td> {product.categories.map(category => (
-                                            <span key={category}>{category},</span>))}<button className='border-0'><img src={add} width={18} alt="" /></button>
+                                        <td className=' text-start'> {product.categories.map(category => (
+                                            <span key={category}>{category},</span>))}
+                                            <button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button>
                                         </td>
                                         <td><img src={product.image} alt={`Photo of ${product.name}`} style={{ width: '50px', height: '50px' }} /></td>
                                         <td>{product.date}</td>
                                         <td className='d-flex gap-2'>
-                                            <button className='border-0'>  <img src={qr} alt="" className='img-fluid' width={50} /></button>
+                                            <button onClick={() => handleShow(product)} className='border-0'>
+                                                <img src={qr} alt="" className='img-fluid' width={50} /></button>
+
+
                                             <button className='border-0'><img src={flip} alt="" className='img-fluid' width={50} /></button>
                                         </td>
                                         <td>
@@ -131,6 +146,10 @@ const Products = () => {
                     </div>
 
                 </div>
+
+
+                <QrModal showModal={showModal} handleShow={handleShow} handleClose={handleClose} product={selectedProduct} />
+
             </div>
         </div >
     );

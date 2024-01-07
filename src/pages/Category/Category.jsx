@@ -152,7 +152,7 @@ const Category = () => {
                     <div>
                         <Link to='add-new'>  <img src={addIcon} alt="" className=" m-2" width={50} /></Link>
                     </div>
-                    <div className='d-flex justify-content-between mx-auto px-1 w-100'>
+                    <div className='d-flex justify-content-between mx-auto px-1 w-100 mb-2'>
                         <div className="align-items-center d-flex gap-1">
                             <label htmlFor="showDropdown" className="form-label mb-0 text-secondary">Show:</label>
                             <select className="form-select" id="showDropdown">
@@ -162,7 +162,7 @@ const Category = () => {
                             </select>
                         </div>
 
-                        <div className="align-items-center d-flex gap-1">
+                        <div className="align-items-center d-flex gap-1 ">
                             <label htmlFor="actionDropdown" className="form-label mb-0 text-secondary">Action:</label>
                             <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
                                 <option value="Edit">Edit</option>
@@ -178,7 +178,7 @@ const Category = () => {
                                 {headerGroups.map(headerGroup => (
                                     <tr {...headerGroup.getHeaderGroupProps()}>
                                         {headerGroup.headers.map(column => (
-                                            <th {...column.getHeaderProps(column.getSortByToggleProps())} className="text-nowrap">
+                                            <th {...column.getHeaderProps(column.getSortByToggleProps())} className="text-nowrap text-66 ">
                                                 {column.render('Header')}
                                                 <span className="ms-2">
                                                     {column.isSorted ? (column.isSortedDesc ?

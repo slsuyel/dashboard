@@ -47,19 +47,20 @@ const TableHeader = ({ slug, selectedIds, children }) => {
 
             </div>
 
-            <div className='d-flex justify-content-between mx-auto px-1 w-100'>
+            <div className='d-flex justify-content-between mx-auto px-1 w-100 mb-2'>
                 <div className="align-items-center d-flex gap-1">
                     <label htmlFor="showDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Show:</label>
                     <select className="form-select" id="showDropdown">
-                        <option>10</option>
-                        <option>20</option>
-                        <option>30</option>
+                        <option className='text-66 '>10</option>
+                        <option className='text-66 '>20</option>
+                        <option className='text-66 '>30</option>
                     </select>
                 </div>
 
                 <div className="align-items-center d-flex gap-1">
                     <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Action:</label>
                     <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
+                        <option disabled>Select</option>
                         <option value="Edit">Edit</option>
                         <option value="Delete">Delete</option>
                     </select>

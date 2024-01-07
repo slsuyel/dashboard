@@ -18,10 +18,16 @@ body {
   color: #33CCCC;
 }
 
+
+
+
 .bg-nil {
   background: #33CCCC;
 }
 
+.text-66 {
+  color: #666666 !important;
+}
 
 
 code {
@@ -197,4 +203,20 @@ input:checked+.dis-slider:before {
   border-radius: 5px;
   background: transparent;
   border: 1px solid burlywood;
+}
+
+
+.form-control {
+  border: 1px solid #25a8bc !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #25a8bc;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #2fc1d765
+}
+
+.font-td {
+  font-size: 14px !important;
 }

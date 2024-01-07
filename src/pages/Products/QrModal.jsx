@@ -37,7 +37,7 @@ const QrModal = ({ showModal, handleShow, handleClose, product }) => {
                 </Modal.Header>
                 <Modal.Body className='mx-auto'>
                     {product && (
-                        <img src={qrCodeUrl || qr} className='img-fluid' alt="QR Code" />
+                        <img src={!qrCodeUrl ? qr : qrCodeUrl} className='img-fluid' alt="QR Code" />
                     )}
                 </Modal.Body>
                 <Modal.Footer className='justify-content-around'>

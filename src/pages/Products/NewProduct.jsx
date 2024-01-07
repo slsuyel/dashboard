@@ -135,8 +135,8 @@ const NewProduct = () => {
             <div className="content-header">
                 <Breadcrumb page={'New Product'} />
                 <div className='row w-100 mx-auto'>
-                    <div className='col-md-7'>
-                        <form className="form">
+                    <div className='col-md-7 p-3 '>
+                        <form className="form p-3 rounded shadow-sm" style={{ backgroundColor: '#ffffff96' }}>
                             <div className="form-group">
                                 <label style={{ color: '#48b7d7' }} htmlFor="productName">Products Name</label>
                                 <input
@@ -179,104 +179,106 @@ const NewProduct = () => {
                         </form>
                     </div>
 
-                    <div className='col-md-5'>
-                        <div className='d-flex my-2 gap-4 justify-content-center my-2'>
-                            <button onClick={handleDraftNow} className='border-white btn btn-warning fs-5 fw-bold text-white'>Draft Now</button>
-                            <button className='border-white btn btn-success fs-5 fw-bold text-white' onClick={handlePublishNow}>
-                                Publish Now
-                            </button>
-                        </div>
-
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Price:</label>
-                            <input type="number" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
-                        </div>
-                        <div className="align-items-center d-flex my-2">
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount:</label>
-                            <label className="dis-switch">
-                                <input type="checkbox" checked={discount} onChange={(e) => setDiscount(e.target.checked)} />
-                                <span className="dis-slider dis-round"></span>
-                            </label>
-                        </div>
-
-                        <div className={`${!discount ? 'd-none' : ''}`}>
-                            <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
-                                <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
-                                    <option value="Flat Discount">Flat Discount:</option>
-                                    <option value="Percentage">Percentage:</option>
-                                </select>
+                    <div className='col-md-5 '>
+                        <div className=' rounded shadow-sm p-3 pt-1 pb-5' style={{ backgroundColor: '#ffffff96' }}>
+                            <div className='d-flex my-2 gap-4 justify-content-center my-2'>
+                                <button onClick={handleDraftNow} className='border-white btn btn-warning fs-5 fw-bold text-white'>Draft Now</button>
+                                <button className='border-white btn btn-success fs-5 fw-bold text-white' onClick={handlePublishNow}>
+                                    Publish Now
+                                </button>
                             </div>
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
-                                <input type="number" className="form-control mx-4" value={discountRate} onChange={(e) => setDiscountRate(e.target.value)} />
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Price:</label>
+                                <input type="number" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
                             </div>
-                        </div>
-
-
-                        <div className='align-items-center d-flex gap-2 my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>
-                            <div className='w-100'>
-                                <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
-                                    {bookCategory.map((w) => <option value={w}>{w}</option>)}
-                                </select>
+                            <div className="align-items-center d-flex my-2">
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount:</label>
+                                <label className="dis-switch">
+                                    <input type="checkbox" checked={discount} onChange={(e) => setDiscount(e.target.checked)} />
+                                    <span className="dis-slider dis-round"></span>
+                                </label>
                             </div>
-                            <div className=''>
-                                <img src={add} alt="" width={30} style={{ cursor: 'pointer' }} onClick={() => handleShow('Category')} />
+
+                            <div className={`${!discount ? 'd-none' : ''}`}>
+                                <div className='align-items-center d-flex my-2'>
+                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
+                                    <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
+                                        <option value="Flat Discount">Flat Discount:</option>
+                                        <option value="Percentage">Percentage:</option>
+                                    </select>
+                                </div>
+
+                                <div className='align-items-center d-flex my-2'>
+                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
+                                    <input type="number" className="form-control mx-4" value={discountRate} onChange={(e) => setDiscountRate(e.target.value)} />
+                                </div>
                             </div>
-                        </div>
 
-                        <div className='align-items-center d-flex gap-2 my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Writers:</label>
-                            <div className='w-100'>
-                                <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
-                                    {writerList.map((w) => <option value={w}>{w}</option>)}
-                                </select>
 
+                            <div className='align-items-center d-flex gap-2 my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>
+                                <div className='w-100'>
+                                    <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                        {bookCategory.map((w) => <option value={w}>{w}</option>)}
+                                    </select>
+                                </div>
+                                <div className=''>
+                                    <img src={add} alt="" width={30} style={{ cursor: 'pointer' }} onClick={() => handleShow('Category')} />
+                                </div>
                             </div>
-                            <div className=''>
-                                <img src={add} onClick={() => handleShow('Writer')} alt="" width={30} style={{ cursor: 'pointer' }} />
+
+                            <div className='align-items-center d-flex gap-2 my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Writers:</label>
+                                <div className='w-100'>
+                                    <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
+                                        {writerList.map((w) => <option value={w}>{w}</option>)}
+                                    </select>
+
+                                </div>
+                                <div className=''>
+                                    <img src={add} onClick={() => handleShow('Writer')} alt="" width={30} style={{ cursor: 'pointer' }} />
+                                </div>
                             </div>
-                        </div>
 
 
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Cover by:</label>
-                            <input type="text" className="form-control" value={coverBy} onChange={(e) => setCoverBy(e.target.value)} />
-                        </div>
-
-
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Total Page:</label>
-                            <input type="text" className="form-control" value={totalPages} onChange={(e) => setTotalPages(e.target.value)} />
-                        </div>
-
-                        <div className='align-items-center d-flex my-2'>
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0' style={{ color: '#48b7d7' }} htmlFor="">Stock:</label>
-                                <input type="number" className="form-control mx-4" value={stock} onChange={(e) => setStock(e.target.value)} />
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Cover by:</label>
+                                <input type="text" className="form-control" value={coverBy} onChange={(e) => setCoverBy(e.target.value)} />
                             </div>
+
+
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 ' style={{ color: '#48b7d7' }} htmlFor="">Weight:</label>
-                                <input type="number" className="form-control mx-4" value={weight} onChange={(e) => setWeight(e.target.value)} />
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Total Page:</label>
+                                <input type="text" className="form-control" value={totalPages} onChange={(e) => setTotalPages(e.target.value)} />
                             </div>
-                        </div>
+
+                            <div className='align-items-center d-flex my-2'>
+                                <div className='align-items-center d-flex my-2'>
+                                    <label className='mb-0' style={{ color: '#48b7d7' }} htmlFor="">Stock:</label>
+                                    <input type="number" className="form-control mx-4" value={stock} onChange={(e) => setStock(e.target.value)} />
+                                </div>
+                                <div className='align-items-center d-flex my-2'>
+                                    <label className='mb-0 ' style={{ color: '#48b7d7' }} htmlFor="">Weight:</label>
+                                    <input type="number" className="form-control mx-4" value={weight} onChange={(e) => setWeight(e.target.value)} />
+                                </div>
+                            </div>
 
 
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Published Date:</label>
-                            <input type="date" className="form-control" value={publishedDate} onChange={(e) => setPublishedDate(e.target.value)} />
-                        </div>
+                            <div className='align-items-center d-flex my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Published Date:</label>
+                                <input type="date" className="form-control" value={publishedDate} onChange={(e) => setPublishedDate(e.target.value)} />
+                            </div>
 
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">ISBN:</label>
-                            <input type="text" className="form-control" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
-                        </div>
+                            <div className='align-items-center d-flex my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">ISBN:</label>
+                                <input type="text" className="form-control" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
+                            </div>
 
-                        <div className='align-items-center d-flex my-2'>
-                            <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Features Image:</label>
-                            <input type="file" className="form-control" onChange={(e) => setFeaturesImage(e.target.files[0])} />
+                            <div className='align-items-center d-flex my-2'>
+                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Features Image:</label>
+                                <input type="file" className="form-control" onChange={(e) => setFeaturesImage(e.target.files[0])} />
+                            </div>
                         </div>
                     </div>
                     <AddWriterAndCategory show={show} setShow={setShow} addItem={addItem} />

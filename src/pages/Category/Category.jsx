@@ -45,7 +45,7 @@ const data = [
 ]
 
 const Category = () => {
-    const [selectedOption, setSelectedOption] = useState('Edit');
+    const [selectedOption, setSelectedOption] = useState();
     const [selectedIds, setSelectedIds] = useState([]);
 
     const handleCheckboxChange = (id) => {
@@ -165,10 +165,11 @@ const Category = () => {
                         <div className="align-items-center d-flex gap-1 ">
                             <label htmlFor="actionDropdown" className="form-label mb-0 text-secondary">Action:</label>
                             <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
+                                <option selected disabled>select</option>
                                 <option value="Edit">Edit</option>
                                 <option value="Delete">Delete</option>
                             </select>
-                            <button className="border btn rounded" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
+                            <button className="border btn rounded action-btn" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
                         </div>
                     </div>
 

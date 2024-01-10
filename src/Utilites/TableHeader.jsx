@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const TableHeader = ({ slug, selectedIds, children }) => {
-    const [selectedOption, setSelectedOption] = useState('Edit');
+    const [selectedOption, setSelectedOption] = useState();
 
     const handleApplyClick = () => {
         Swal.fire({
@@ -68,11 +68,11 @@ const TableHeader = ({ slug, selectedIds, children }) => {
                 <div className="align-items-center d-flex gap-1">
                     <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Action:</label>
                     <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
-                        <option disabled>Select</option>
+                        <option selected disabled>select</option>
                         <option value="Edit">Edit</option>
                         <option value="Delete">Delete</option>
                     </select>
-                    <button className="border btn rounded" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
+                    <button className="border btn rounded action-btn" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
                 </div>
             </div>
         </>

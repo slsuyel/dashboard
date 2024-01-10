@@ -4,11 +4,14 @@ import Breadcrumb from '../../Utilites/Breadcrumb';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Swal from 'sweetalert2';
+import TableHeader from '../../Utilites/TableHeader';
+import { Link } from 'react-router-dom';
+import SearchOrder from './SearchOrder';
 
 const data = [
     {
         "id": 1,
-        "document": "ABC123",
+        "document": "invoice ",
         "OrderNo": "ORD001",
         "OrderDate": "2023-01-15",
         "updateDate": "2023-01-20",
@@ -20,7 +23,7 @@ const data = [
     },
     {
         "id": 2,
-        "document": "XYZ456",
+        "document": "invoice ",
         "OrderNo": "ORD002",
         "OrderDate": "2023-02-10",
         "updateDate": "2023-02-15",
@@ -32,7 +35,7 @@ const data = [
     },
     {
         "id": 3,
-        "document": "DEF789",
+        "document": "invoice ",
         "OrderNo": "ORD003",
         "OrderDate": "2023-03-05",
         "updateDate": "2023-03-10",
@@ -51,14 +54,14 @@ const Orders = () => {
     const [selectedOption, setSelectedOption] = useState('Edit');
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectedOrder, setSelectedOrder] = useState(null);
+    const [statusBtn, setStatusBtn] = useState('All');
+
 
     const [showOrderDetailsModal, setShowOrderDetailsModal] = useState(false);
 
     const handleChangeStatus = (event, orderId) => {
         const newStatus = event.target.value;
 
-        // Assuming you have a function to update the status of an order
-        // You should replace this with your actual logic for updating the order status
         updateOrderStatus(orderId, newStatus);
     };
 
@@ -105,84 +108,109 @@ const Orders = () => {
         setShowOrderDetailsModal(false);
         setSelectedOrder(null);
     };
+
+    const handleStatusBtn = (params) => {
+        setStatusBtn(params)
+    }
+
+    console.log(statusBtn);
+
     return (
         <div className="content-wrapper">
             <div className="content-header">
                 <Breadcrumb page={'Orders'} />
 
                 <div className="container d-flex gap-4 flex-wrap justify-content-center my-3">
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('All')}
+                        className={`btn btn-secondary ${statusBtn === 'All' ? 'active-btn' : ''}`}
+                    >
                         All
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Pending')}
+                        className={`btn btn-secondary ${statusBtn === 'Pending' ? 'active-btn' : ''}`}
+                    >
                         Pending
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Ready to ship')}
+                        className={`btn btn-secondary ${statusBtn === 'Ready to ship' ? 'active-btn' : ''}`}
+                    >
                         Ready to ship
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Shipped')}
+                        className={`btn btn-secondary ${statusBtn === 'Shipped' ? 'active-btn' : ''}`}
+                    >
                         Shipped
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Delivered')}
+                        className={`btn btn-secondary ${statusBtn === 'Delivered' ? 'active-btn' : ''}`}
+                    >
                         Delivered
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Returned')}
+                        className={`btn btn-secondary ${statusBtn === 'Returned' ? 'active-btn' : ''}`}
+                    >
                         Returned
                     </button>
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                        type="button"
+                        onClick={() => handleStatusBtn('Refund')}
+                        className={`btn btn-secondary ${statusBtn === 'Refund' ? 'active-btn' : ''}`}
+                    >
                         Refund
                     </button>
                 </div>
+                <SearchOrder />
 
-                <div className='d-flex justify-content-between mx-auto px-1 w-100'>
-                    <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="showDropdown" className="form-label mb-0 text-secondary">Show:</label>
-                        <select className="form-select" id="showDropdown">
-                            <option>10</option>
-                            <option>20</option>
-                            <option>30</option>
-                        </select>
-                    </div>
+                <TableHeader /* slug={'products/new'}  */ selectedIds={selectedIds} setSelectedIds={setSelectedIds} />
 
-                    <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="actionDropdown" className="form-label mb-0 text-secondary">Action:</label>
-                        <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
-                            <option value="Edit">Edit</option>
-                            <option value="Delete">Delete</option>
-                        </select>
-                        <button className="border btn rounded" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
-                    </div>
-                </div>
+
                 <div className='table-responsive'>
                     <table className="table table-striped">
                         <thead>
                             <tr className='text-center'>
                                 <th>#</th>
-                                <th className='text-nowrap text-secondary'>Document <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Order No <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Order Date <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Product Name <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Items <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Payment Method <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Status <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Action</th>
+                                <th className='text-nowrap text-66 '>Document <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Order No <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Order Date <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Product Name <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Items <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Price <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Payment Method <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Status <SortIcon /></th>
+                                <th className='text-nowrap text-66 '>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((order, index) => (
                                 <tr className='text-center' key={order.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{order.document}</td>
-                                    <td>{order.OrderNo}</td>
-                                    <td>{order.OrderDate}</td>
-                                    <td>{order.productName}</td>
-                                    <td>{order.items}</td>
-                                    <td>{order.price}</td>
-                                    <td>{order.paymentMethod}</td>
-                                    <td>{order.status}</td>
-                                    <td>
+                                    <td className='font-td'>{index + 1}</td>
+                                    <td className='font-td'>
+
+
+                                        <a target='_blank' href="https://dwdqz3611m4qq.cloudfront.net/heroes/_1600x2065_crop_center-center_82_line/invoice_example_01.png"> {order.document}</a>
+
+                                    </td>
+                                    <td className='font-td'>{order.OrderNo}</td>
+                                    <td className='font-td'>{order.OrderDate}</td>
+                                    <td className='font-td'>{order.productName}</td>
+                                    <td className='font-td'>{order.items}</td>
+                                    <td className='font-td'>{order.price}</td>
+                                    <td className='text-start'>{order.paymentMethod}</td>
+                                    <td className='font-td'>{order.status}</td>
+                                    <td className='font-td'>
                                         <button
                                             onClick={() => handleOrderDetails(order.id)}
                                             className="border btn btn-sm mb-0 text-nowrap text-white" style={{ background: "#48b7d7", width: '110px' }}

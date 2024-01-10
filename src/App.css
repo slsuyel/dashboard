@@ -202,7 +202,8 @@ input:checked+.dis-slider:before {
   /* margin-right: 8px; */
   border-radius: 5px;
   background: transparent;
-  border: 1px solid burlywood;
+  border: 1px solid #999591;
+  color: #666666;
 }
 
 
@@ -219,4 +220,13 @@ input:checked+.dis-slider:before {
 
 .font-td {
   font-size: 14px !important;
+}
+
+/* Add this to your CSS file */
+.active-btn {
+  background: #1da4ba !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border: 2px solid #6c757d !important;
+  border-radius: 8px !important;
 }

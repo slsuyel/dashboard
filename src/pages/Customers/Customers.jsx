@@ -23,12 +23,12 @@ const Customers = () => {
     return (
         <div className="content-wrapper">
             <div className="content-header">
-                <Breadcrumb page={'customers'} />
+                <Breadcrumb page={'Customer '} />
 
                 <CustomerSearch />
                 <hr />
 
-                <div className='d-flex justify-content-between mx-auto px-1 w-100'>
+                <div className='d-flex justify-content-between mx-auto px-1 w-100 my-3'>
                     <div className="align-items-center d-flex gap-1">
                         <label htmlFor="showDropdown" className="form-label mb-0 text-secondary">Show:</label>
                         <select className="form-select" id="showDropdown">
@@ -44,30 +44,30 @@ const Customers = () => {
 
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className=''>
                                 <th>#</th>
-                                <th className='text-nowrap text-secondary'>Cusomer Name <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Email <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Contact No.<SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>District <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Thana <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Total Orders <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Customer Name <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Email <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Contact No.<SortIcon /></th>
+                                <th className='text-nowrap text-66'>District <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Thana <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Total Orders <SortIcon /></th>
 
-                                <th className='text-nowrap text-secondary'>Action</th>
+                                <th className='text-nowrap text-66'>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             {data.map((customer, index) => (
-                                <tr className='text-center' key={customer.id}>
-                                    <td>{index + 1}</td>
-                                    <td>{customer.customerName}</td>
-                                    <td>{customer.email}</td>
-                                    <td>{customer.contactNo}</td>
-                                    <td>{customer.district}</td>
-                                    <td>{customer.thana}</td>
-                                    <td>{customer.totalOrders}</td>
-                                    <td>
+                                <tr className='text-start' key={customer.id}>
+                                    <td className='font-td'>{index + 1}</td>
+                                    <td className='font-td'>{customer.customerName}</td>
+                                    <td className='font-td'>{customer.email}</td>
+                                    <td className='font-td'>{customer.contactNo}</td>
+                                    <td className='font-td'>{customer.district}</td>
+                                    <td className='font-td'>{customer.thana}</td>
+                                    <td className='font-td'>{customer.totalOrders}</td>
+                                    <td className='font-td'>
                                         <Link to={'/dashboard/customers/details'} className="border btn btn-sm mb-0 text-nowrap text-white" style={{ background: "#48b7d7" }}>
                                             Orders List View </Link>
 

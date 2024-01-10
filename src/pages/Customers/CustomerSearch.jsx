@@ -63,12 +63,12 @@ const CustomerSearch = () => {
 
 
     return (
-        <div class="container mb-3">
+        <div class="container mb-3 my-2">
             <form class="d-flex gap-3 justify-content-center flex-wrap">
                 <div class="custom-form-group custom-flex-fill">
                     <input
                         type="text"
-                        class="custom-form-control form-control p-1"
+                        class="custom-form-control"
                         id="customerName"
                         placeholder="Customer Name"
                         value={searchQuery.customerName}
@@ -78,7 +78,7 @@ const CustomerSearch = () => {
                 <div class="custom-form-group custom-flex-fill">
                     <input
                         type="text"
-                        class="custom-form-control form-control p-1"
+                        class="custom-form-control"
                         id="contactNo"
                         placeholder="Contact No."
                         value={searchQuery.contactNo}
@@ -88,7 +88,7 @@ const CustomerSearch = () => {
                 <div class="custom-form-group custom-flex-fill">
                     <input
                         type="text"
-                        class="custom-form-control form-control p-1"
+                        class="custom-form-control"
                         id="email"
                         placeholder="Email"
                         value={searchQuery.email}
@@ -97,7 +97,7 @@ const CustomerSearch = () => {
                 </div>
                 <div className="custom-form-group custom-flex-fill">
                     <select
-                        className="custom-form-control form-control p-1"
+                        className="custom-form-control"
                         id="district"
                         placeholder="District"
                         onChange={handleDistrictChange}
@@ -112,7 +112,7 @@ const CustomerSearch = () => {
                 </div>
                 <div className="custom-form-group custom-flex-fill">
                     <select
-                        className="custom-form-control form-control p-1"
+                        className="custom-form-control"
                         id="thana"
                         placeholder="Thana"
                         disabled={!selectedDistrictId}
@@ -129,7 +129,7 @@ const CustomerSearch = () => {
                 <div class="custom-form-group custom-flex-fill">
                     <input
                         type="text"
-                        class="custom-form-control form-control p-1"
+                        class="custom-form-control"
                         id="orderQuantity"
                         placeholder="Order Quantity"
                         value={searchQuery.orderQuantity}

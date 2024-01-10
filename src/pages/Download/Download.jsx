@@ -62,13 +62,13 @@ const Download = ({ children }) => {
                 <div className='table-responsive '>
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className='text-start'>
                                 <th>#</th>
-                                <th className='text-nowrap text-secondary'>Document Title<SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Modified Date<SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Quick Action <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Document Title<SortIcon /></th>
+                                <th className='text-nowrap text-66'>Modified Date<SortIcon /></th>
+                                <th className='text-nowrap text-66'>Quick Action <SortIcon /></th>
 
-                                <th className='text-nowrap text-secondary'>
+                                <th className='text-nowrap text-66'>
                                     <input
                                         type="checkbox"
                                         checked={selectAll}
@@ -79,7 +79,7 @@ const Download = ({ children }) => {
                         </thead>
                         <tbody>
                             {data.map((product, index) => (
-                                <tr className='text-center' key={`product_${index}`}>
+                                <tr className='text-start' key={`product_${index}`}>
                                     <td>{index + 1}</td>
                                     <td>{product.documentTitle}</td>
                                     <td>{product.modifiedDate}</td>

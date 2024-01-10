@@ -142,9 +142,9 @@ const Writers = () => {
                     <img src={addIcon} onClick={handleShow} alt="" className="btn m-2 p-1" width={50} />
                 </div>
 
-                <div className='d-flex justify-content-between mx-auto px-1 w-100'>
+                <div className='d-flex justify-content-between mx-auto px-1 w-100 mb-3'>
                     <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="showDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Show:</label>
+                        <label htmlFor="showDropdown" className="form-label w-50 mb-0 mb-0 text-66">Show:</label>
                         <select className="form-select" id="showDropdown">
                             <option>10</option>
                             <option>20</option>
@@ -153,7 +153,7 @@ const Writers = () => {
                     </div>
 
                     <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Action:</label>
+                        <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-66">Action:</label>
                         <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
                             <option value="Edit">Edit</option>
                             <option value="Delete">Delete</option>
@@ -169,15 +169,15 @@ const Writers = () => {
 
                     <table className="table">
                         <thead>
-                            <tr className='text-center'>
-                                <th className='text-nowrap text-secondary'>ID  <SortIcon /></th>
+                            <tr className='text-start'>
+                                <th className='text-nowrap text-66'>ID  <SortIcon /></th>
 
-                                <th className='text-nowrap text-secondary'>Writers Name (English) <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Writers Name (Bengali) <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Type <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Contact Number <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>Photo <SortIcon /></th>
-                                <th className='text-nowrap text-secondary'>
+                                <th className='text-nowrap text-66'>Writers Name (English) <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Writers Name (Bengali) <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Type <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Contact Number <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Photo <SortIcon /></th>
+                                <th className='text-nowrap text-66'>
                                     <input
                                         type="checkbox"
                                         checked={selectAll}
@@ -188,7 +188,7 @@ const Writers = () => {
                         </thead>
                         <tbody>
                             {data.map(writer => (
-                                <tr className='text-center' key={writer.id}>
+                                <tr className='text-start font-td' key={writer.id}>
                                     <td>{writer.id}</td>
 
                                     <td>{writer.writersNameEn}</td>

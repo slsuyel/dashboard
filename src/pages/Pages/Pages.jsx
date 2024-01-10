@@ -71,9 +71,9 @@ const Pages = () => {
                     </Link>
                 </div>
 
-                <div className='d-flex justify-content-between mx-auto px-1 w-100'>
+                <div className='d-flex justify-content-between mx-auto px-1 w-100 mb-2'>
                     <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="showDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Show:</label>
+                        <label htmlFor="showDropdown" className="form-label w-50 mb-0 mb-0 text-66">Show:</label>
                         <select className="form-select" id="showDropdown">
                             <option>10</option>
                             <option>20</option>
@@ -82,7 +82,7 @@ const Pages = () => {
                     </div>
 
                     <div className="align-items-center d-flex gap-1">
-                        <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-secondary">Action:</label>
+                        <label htmlFor="actionDropdown" className="form-label w-50 mb-0 mb-0 text-66">Action:</label>
                         <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
                             <option value="Edit">Edit</option>
                             <option value="Delete">Delete</option>
@@ -97,13 +97,13 @@ const Pages = () => {
                     <div className='table-responsive '>
                         <table className="table table-striped">
                             <thead>
-                                <tr className='text-center'>
+                                <tr className='text-start font-td'>
                                     <th>#</th>
-                                    <th className='text-nowrap text-secondary'>Page Name<SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Slug<SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Modied Date<SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Page Name<SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Slug<SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Modied Date<SortIcon /></th>
 
-                                    <th className='text-nowrap text-secondary'>
+                                    <th className='text-nowrap text-66'>
                                         <input
                                             type="checkbox"
                                             checked={selectAll}
@@ -114,7 +114,7 @@ const Pages = () => {
                             </thead>
                             <tbody>
                                 {data.map((page) => (
-                                    <tr className='text-center' key={page.id}>
+                                    <tr className='text-start font-td' key={page.id}>
                                         <td>{page.id}</td>
                                         <td>{page.name}</td>
                                         <td>{page.slug}</td>

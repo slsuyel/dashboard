@@ -40,10 +40,18 @@ const TableHeader = ({ slug, selectedIds, children }) => {
 
             <div className='mt-3 '>
 
-                {children ? children : <Link to={`/dashboard/${slug}`}>
+                {
+                    slug && (
+                        children ? (
+                            children
+                        ) : (
+                            <Link to={`/dashboard/${slug}`}>
+                                <img src={addIcon} alt="" className="btn m-2 p-1" width={50} />
+                            </Link>
+                        )
+                    )
+                }
 
-                    <img src={addIcon} alt="" className="btn m-2 p-1" width={50} />
-                </Link>}
 
             </div>
 

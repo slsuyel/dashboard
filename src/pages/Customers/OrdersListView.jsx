@@ -59,7 +59,7 @@ const OrdersListView = () => {
                 <hr />
 
                 <div className='d-flex justify-content-between mx-auto px-1 w-100'>
-                    <div className="align-items-center d-flex gap-1">
+                    <div className="align-items-center d-flex gap-1 mb-3s">
                         <label htmlFor="showDropdown" className="form-label mb-0 text-secondary">Show:</label>
                         <select className="form-select" id="showDropdown">
                             <option>10</option>
@@ -81,7 +81,7 @@ const OrdersListView = () => {
                 <div className='table-responsive '>
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className=''>
                                 <th>#</th>
                                 <th className='text-nowrap text-secondary'>Document <SortIcon /></th>
                                 <th className='text-nowrap text-secondary'>Order No <SortIcon /></th>
@@ -97,7 +97,7 @@ const OrdersListView = () => {
                         </thead>
                         <tbody>
                             {data.map((order, index) => (
-                                <tr className='text-center' key={order.id}>
+                                <tr className='' key={order.id}>
                                     <td>{index + 1}</td>
                                     <td>{order.document}</td>
                                     <td>{order.OrderNo}</td>

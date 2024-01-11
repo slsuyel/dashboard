@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const TableHeader = ({ slug, selectedIds, children }) => {
-    const [selectedOption, setSelectedOption] = useState();
+    const [selectedOption, setSelectedOption] = useState('Edit');
 
     const handleApplyClick = () => {
         Swal.fire({

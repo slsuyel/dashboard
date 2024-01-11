@@ -4,6 +4,7 @@ import addIcon from '../../assets/icons/png/+Add.png';
 import { Link } from "react-router-dom";
 import { useTable, useSortBy, usePagination } from 'react-table';
 import Breadcrumb from "../../Utilites/Breadcrumb";
+import TableHeader from "../../Utilites/TableHeader";
 
 const data = [
     {
@@ -143,35 +144,14 @@ const Category = () => {
         usePagination
     );
 
-
+    /* /category/add-new */
     return (
         <div className="content-wrapper">
             <div className="content-header">
                 <Breadcrumb page={'Category'} />
                 <div className='bg-white mt-3 px-2'>
-                    <div>
-                        <Link to='add-new'>  <img src={addIcon} alt="" className=" m-2" width={50} /></Link>
-                    </div>
-                    <div className='d-flex justify-content-between mx-auto px-1 w-100 mb-2'>
-                        <div className="align-items-center d-flex gap-1">
-                            <label htmlFor="showDropdown" className="form-label mb-0 text-secondary">Show:</label>
-                            <select className="form-select" id="showDropdown">
-                                <option>10</option>
-                                <option>20</option>
-                                <option>30</option>
-                            </select>
-                        </div>
 
-                        <div className="align-items-center d-flex gap-1 ">
-                            <label htmlFor="actionDropdown" className="form-label mb-0 text-secondary">Action:</label>
-                            <select className="form-select" id="actionDropdown" onChange={handleDropdownChange}>
-                                <option selected disabled>select</option>
-                                <option value="Edit">Edit</option>
-                                <option value="Delete">Delete</option>
-                            </select>
-                            <button className="border btn rounded action-btn" disabled={selectedIds.length === 0} onClick={handleApplyClick}>Apply</button>
-                        </div>
-                    </div>
+                    <TableHeader slug={'products/new'} selectedIds={selectedIds} setSelectedIds={setSelectedIds} />
 
                     <div className='table-responsive'>
                         <table {...getTableProps()} className="table table-striped">

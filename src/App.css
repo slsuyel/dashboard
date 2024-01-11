@@ -30,6 +30,9 @@ body {
 }
 
 
+
+
+
 code {
   font-family: 'Mitr';
 }
@@ -218,7 +221,12 @@ input:checked+.dis-slider:before {
   box-shadow: 0 0 0 0.1rem #2fc1d765
 }
 
+td {
+  color: #666666 !important;
+}
+
 .font-td {
+
   font-size: 14px !important;
 }
 

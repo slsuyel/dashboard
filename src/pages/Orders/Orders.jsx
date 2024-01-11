@@ -179,7 +179,7 @@ const Orders = () => {
                 <div className='table-responsive'>
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className=''>
                                 <th>#</th>
                                 <th className='text-nowrap text-66 '>Document <SortIcon /></th>
                                 <th className='text-nowrap text-66 '>Order No <SortIcon /></th>
@@ -195,7 +195,7 @@ const Orders = () => {
                         </thead>
                         <tbody>
                             {data.map((order, index) => (
-                                <tr className='text-center' key={order.id}>
+                                <tr className='' key={order.id}>
                                     <td className='font-td'>{index + 1}</td>
                                     <td className='font-td'>
 
@@ -210,15 +210,16 @@ const Orders = () => {
                                     <td className='font-td'>{order.price}</td>
                                     <td className='text-start'>{order.paymentMethod}</td>
                                     <td className='font-td'>{order.status}</td>
-                                    <td className='font-td'>
+                                    <td className=''>
                                         <button
                                             onClick={() => handleOrderDetails(order.id)}
-                                            className="border btn btn-sm mb-0 text-nowrap text-white" style={{ background: "#48b7d7", width: '110px' }}
+                                            className="border btn btn-sm mb-1 text-nowrap text-white" style={{ background: "#48b7d7", width: '117px' }}
                                         >
                                             Order Details
                                         </button>
-                                        <select name="statusDropdown" className='bg-warning border-secondary p-1 rounded-1' id="statusDropdown" onChange={(e) => handleChangeStatus(e, order.id)}
-                                            style={{ width: '110px', fontSize: '12px' }}>
+                                        <select name="statusDropdown" className='bg-warning border-secondary p-1 rounded-1 mb-1' id="statusDropdown" onChange={(e) => handleChangeStatus(e, order.id)}
+
+                                            style={{ width: '117px', fontSize: '12px', height: '29px' }}>
                                             <option value="" selected disabled>Change Status</option>
                                             <option value="Ready to ship">Ready to ship</option>
                                             <option value="Shipped">Shipped</option>

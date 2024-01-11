@@ -65,7 +65,7 @@ const NewProduct = () => {
             [{ 'header': '1' }, { 'font': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['bold', 'italic', 'underline'],
-            ['link', 'image'],
+            ['link',],
             [{ 'color': [] }, { 'background': [] }], [{ 'align': [] }],
             ['clean']
         ],
@@ -181,7 +181,7 @@ const NewProduct = () => {
 
                     <div className='col-md-5 '>
                         <div className=' rounded shadow-sm p-3 pt-1 pb-5' style={{ backgroundColor: '#ffffff96' }}>
-                            <div className='d-flex my-2 gap-4 justify-content-center my-2'>
+                            <div className='d-flex my-2 gap-4  my-2 mb-4'>
                                 <button onClick={handleDraftNow} className='border-white btn btn-warning fs-5 fw-bold text-white'>Draft Now</button>
                                 <button className='border-white btn btn-success fs-5 fw-bold text-white' onClick={handlePublishNow}>
                                     Publish Now
@@ -202,7 +202,7 @@ const NewProduct = () => {
 
                             <div className={`${!discount ? 'd-none' : ''}`}>
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount: Type</label>
+                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount Type</label>
                                     <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
                                         <option value="Flat Discount">Flat Discount:</option>
                                         <option value="Percentage">Percentage:</option>
@@ -210,7 +210,7 @@ const NewProduct = () => {
                                 </div>
 
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
+                                    <label className='mb-0 w-50 text-nowrap' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
                                     <input type="number" className="form-control mx-4" value={discountRate} onChange={(e) => setDiscountRate(e.target.value)} />
                                 </div>
                             </div>

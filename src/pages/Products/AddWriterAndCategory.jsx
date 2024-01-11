@@ -37,10 +37,10 @@ const AddWriterAndCategory = ({ show, setShow, addItem }) => {
             </Modal.Body>
 
             <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="danger" onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant="primary" onClick={handleSaveChanges}>
+                <Button variant="success" onClick={handleSaveChanges}>
                     Save Changes
                 </Button>
             </Modal.Footer>

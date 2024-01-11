@@ -90,16 +90,16 @@ const Products = () => {
                             <thead>
                                 <tr className=''>
                                     <th>#</th>
-                                    <th className='text-nowrap text-secondary'>P. ID <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>P. ID <SortIcon /></th>
 
-                                    <th className='text-nowrap text-secondary'>P. Name <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Price <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Stock<SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Categories  <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Image <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Date <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>Quick Action <SortIcon /></th>
-                                    <th className='text-nowrap text-secondary'>
+                                    <th className='text-nowrap text-66'>P. Name <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Price <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Stock<SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Categories  <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Image <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Date <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>Quick Action <SortIcon /></th>
+                                    <th className='text-nowrap text-66'>
                                         <input
                                             type="checkbox"
                                             checked={selectAll}
@@ -110,20 +110,20 @@ const Products = () => {
                             </thead>
                             <tbody>
                                 {data.map((product, index) => (
-                                    <tr className='text-center font-td' key={product.id}>
-                                        <td>{index + 1}</td>
-                                        <td>{product.id}</td>
+                                    <tr className=' font-td' key={product.id}>
+                                        <td className='text-66'>{index + 1}</td>
+                                        <td className='text-66'>{product.id}</td>
 
-                                        <td>{product.name}</td>
-                                        <td>{product.price} <button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
-                                        <td>{product.stock}<button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
+                                        <td className='text-66'>{product.name}</td>
+                                        <td className='text-66'>{product.price} <button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
+                                        <td className='text-66'>{product.stock}<button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button></td>
 
-                                        <td className=' text-start'> {product.categories.map(category => (
+                                        <td className=' text-start text-66'> {product.categories.map(category => (
                                             <span key={category}>{category},</span>))}
                                             <button className='border-0 bg-transparent'><img src={add} width={18} alt="" /></button>
                                         </td>
-                                        <td><img src={product.image} alt={`Photo of ${product.name}`} style={{ width: '50px', height: '50px' }} /></td>
-                                        <td>{product.date}</td>
+                                        <td className='text-66'><img src={product.image} alt={`Photo of ${product.name}`} style={{ width: '50px', height: '50px' }} /></td>
+                                        <td className='text-66'>{product.date}</td>
                                         <td className='d-flex gap-2'>
                                             <button onClick={() => handleShow(product)} className='border-0'>
                                                 <img src={qr} alt="" className='img-fluid' width={50} /></button>
@@ -131,7 +131,7 @@ const Products = () => {
 
                                             <button className='border-0'><img src={flip} alt="" className='img-fluid' width={50} /></button>
                                         </td>
-                                        <td>
+                                        <td className='text-66'>
                                             {/* Individual checkbox */}
                                             <input
                                                 type="checkbox"

@@ -97,6 +97,7 @@ const CustomerSearch = () => {
                 </div>
                 <div className="custom-form-group custom-flex-fill">
                     <select
+                        style={{ padding: '5px 5px' }}
                         className="custom-form-control"
                         id="district"
                         placeholder="District"
@@ -113,6 +114,7 @@ const CustomerSearch = () => {
                 <div className="custom-form-group custom-flex-fill">
                     <select
                         className="custom-form-control"
+                        style={{ padding: '5px 5px' }}
                         id="thana"
                         placeholder="Thana"
                         disabled={!selectedDistrictId}
@@ -128,7 +130,7 @@ const CustomerSearch = () => {
                 </div>
                 <div class="custom-form-group custom-flex-fill">
                     <input
-                        type="text"
+                        type="number"
                         class="custom-form-control"
                         id="orderQuantity"
                         placeholder="Order Quantity"

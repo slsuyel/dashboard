@@ -19,14 +19,12 @@ import Writers from "../pages/Writers/Writers";
 import Orders from "../pages/Orders/Orders";
 import Customers from "../pages/Customers/Customers";
 import Visitor from "../pages/Visitor/Visitor";
-import Multimedia from "../pages/Multimedia/Multimedia";
 import Pages from "../pages/Pages/Pages";
 import NewProduct from "../pages/Products/NewProduct";
 import OrdersListView from "../pages/Customers/OrdersListView";
 import FeaturedCategory from "../pages/FeaturedCategory/FeaturedCategory";
 import Download from "../pages/Download/Download";
 import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
-import PhotoCategoryAdd from "../pages/Multimedia/PhotoCategoryAdd";
 import ViewPhotoCategory from "../pages/Multimedia/ViewPhotoCategory";
 import MultimediaMainLayout from "../pages/Multimedia/MultimediaMainLayout";
 
@@ -120,10 +118,7 @@ export const router = createBrowserRouter([
                 path: "multimedia",
                 element: <MultimediaMainLayout />,
             },
-            {
-                path: "multimedia/add",
-                element: <PhotoCategoryAdd />,
-            },
+
             {
                 path: "multimedia/photo-gallery",
                 element: <ViewPhotoCategory />,

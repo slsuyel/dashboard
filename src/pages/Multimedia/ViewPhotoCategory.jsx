@@ -53,7 +53,7 @@ const ViewPhotoCategory = () => {
 
                 <Breadcrumb page={'Multimedia-Photo Gallery'} />
 
-                <TableHeader slug={'multimedia/add'} selectedIds={selectedIds} setSelectedIds={setSelectedIds} />
+                <TableHeader slug={null} selectedIds={selectedIds} setSelectedIds={setSelectedIds} />
 
                 <div className='table-responsive '>
                     <table className="table table-striped">

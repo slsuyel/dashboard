@@ -28,6 +28,7 @@ import Download from "../pages/Download/Download";
 import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
 import PhotoCategoryAdd from "../pages/Multimedia/PhotoCategoryAdd";
 import ViewPhotoCategory from "../pages/Multimedia/ViewPhotoCategory";
+import MultimediaMainLayout from "../pages/Multimedia/MultimediaMainLayout";
 
 export const router = createBrowserRouter([
     {
@@ -117,7 +118,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "multimedia",
-                element: <Multimedia />,
+                element: <MultimediaMainLayout />,
             },
             {
                 path: "multimedia/add",

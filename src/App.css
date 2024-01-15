@@ -226,8 +226,15 @@ td {
 }
 
 .font-td {
-
   font-size: 14px !important;
+}
+
+.font-bn {
+  font-size: 18px !important;
+}
+
+label {
+  color: #666666 !important;
 }
 
 /* Add this to your CSS file */

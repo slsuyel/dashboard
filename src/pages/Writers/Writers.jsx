@@ -171,10 +171,11 @@ const Writers = () => {
                     <table className="table">
                         <thead>
                             <tr className='text-start'>
+                                <th className='text-nowrap text-66'>#</th>
                                 <th className='text-nowrap text-66'>ID  <SortIcon /></th>
 
-                                <th className='text-nowrap text-66'>Writers Name (English) <SortIcon /></th>
-                                <th className='text-nowrap text-66'>Writers Name (Bengali) <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Writers Name (EN) <SortIcon /></th>
+                                <th className='text-nowrap text-66'>Writers Name (BN) <SortIcon /></th>
                                 <th className='text-nowrap text-66'>Type <SortIcon /></th>
                                 <th className='text-nowrap text-66'>Contact Number <SortIcon /></th>
                                 <th className='text-nowrap text-66'>Photo <SortIcon /></th>
@@ -188,13 +189,15 @@ const Writers = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map(writer => (
+                            {data.map((writer, index) => (
                                 <tr className='text-start font-td' key={writer.id}>
+                                    <td>{index + 1}</td>
+
                                     <td>{writer.id}</td>
 
                                     <td>{writer.writersNameEn}</td>
-                                    <td>{writer.writersNameBn}</td>
-                                    <td>{writer.writerType}</td>
+                                    <td className='font-bn'>{writer.writersNameBn}</td>
+                                    <td className='font-bn'>{writer.writerType}</td>
                                     <td>{writer.contact_no}</td>
                                     <td><img src={writer.image} alt={`Photo of ${writer.name}`} style={{ width: '50px', height: '50px' }} /></td>
                                     <td>
@@ -223,11 +226,11 @@ const Writers = () => {
 
                                 <div className="align-items-center d-flex gap-1 justify-content-around mb-3">
                                     <label htmlFor="writersNameEnglish" className="form-label w-50 mb-0">
-                                        Writers Name
+                                        Writer Name
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className="form-control "
                                         id="writersNameEnglish"
                                         name="writersNameEnglish"
                                         value={formData.writersNameEnglish}
@@ -242,7 +245,7 @@ const Writers = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        className="form-control "
                                         id="writersNameBengali"
                                         name="writersNameBengali"
                                         value={formData.writersNameBengali}
@@ -277,8 +280,8 @@ const Writers = () => {
                                         Contact Number
                                     </label>
                                     <input
-                                        type="tel"
-                                        className="form-control"
+                                        type="number"
+                                        className="form-control "
                                         id="contactNumber"
                                         name="contactNumber"
                                         value={formData.contactNumber}
@@ -293,7 +296,7 @@ const Writers = () => {
                                     </label>
                                     <input
                                         type="file"
-                                        className="form-control"
+                                        className="form-control "
                                         id="photo"
                                         name="photo"
                                         accept="image/*"

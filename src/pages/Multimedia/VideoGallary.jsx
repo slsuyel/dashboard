@@ -27,7 +27,7 @@ const data = [
 
 
 
-const Multimedia = () => {
+const VideoGallary = () => {
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
 
@@ -59,7 +59,7 @@ const Multimedia = () => {
                         <tr className='text-start'>
                             <th>#</th>
                             <th className='text-nowrap text-secondary'>Category Name<SortIcon /></th>
-                            <th className='text-nowrap text-secondary'>Photo Quantity<SortIcon /></th>
+                            <th className='text-nowrap text-secondary'>Video Quantity<SortIcon /></th>
                             <th className='text-nowrap text-secondary'>Modified Date<SortIcon /></th>
                             <th className='text-nowrap text-secondary'>Quick Action <SortIcon /></th>
 
@@ -99,4 +99,4 @@ const Multimedia = () => {
     );
 };
 
-export default Multimedia;
+export default VideoGallary;

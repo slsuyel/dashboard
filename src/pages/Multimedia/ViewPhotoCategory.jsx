@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Breadcrumb from '../../Utilites/Breadcrumb';
 import TableHeader from '../../Utilites/TableHeader';
 import SortIcon from '../../Utilites/SortIcon';
+import BackBtn from '../Download/BackBtn';
 
 const data = [
     {
@@ -52,13 +53,16 @@ const ViewPhotoCategory = () => {
             <div className="content-header">
 
                 <Breadcrumb page={'Multimedia-Photo Gallery'} />
+                <BackBtn slug={'multimedia'} />
+                <TableHeader selectedIds={selectedIds} setSelectedIds={setSelectedIds} >
 
-                <TableHeader slug={null} selectedIds={selectedIds} setSelectedIds={setSelectedIds} />
+
+                </TableHeader>
 
                 <div className='table-responsive '>
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className='text-start'>
                                 <th>#</th>
                                 <th className='text-nowrap text-secondary'>Category Name<SortIcon /></th>
                                 <th className='text-nowrap text-secondary'>Photo Title<SortIcon /></th>
@@ -76,7 +80,7 @@ const ViewPhotoCategory = () => {
                         </thead>
                         <tbody>
                             {data.map((product, index) => (
-                                <tr className='text-center' key={`product_${index}`}>
+                                <tr className='text-start' key={`product_${index}`}>
                                     <td>{index + 1}</td>
                                     <td>{product.categoryName}</td>
                                     <td>{product.photoTitle}</td>

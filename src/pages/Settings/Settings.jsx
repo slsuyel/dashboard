@@ -34,7 +34,7 @@ const Settings = () => {
                         <button
                             key={tab.id}
                             className={` px-3 py-2 ${activeTab === tab.id
-                                ? 'bg-nil border-2 border-secondary fw-bold rounded text-white'
+                                ? 'active-btn'
                                 : 'btn btn-secondary'
                                 }`}
                             onClick={() => handleTabClick(tab.id)}

@@ -45,7 +45,7 @@ const FeaturedCategory = () => {
                 <div className='table-responsive'>
                     <table className="table table-striped">
                         <thead>
-                            <tr className='text-center'>
+                            <tr className='text-start'>
                                 <th>#</th>
                                 <th>Selected Category Name</th>
                             </tr>
@@ -53,7 +53,7 @@ const FeaturedCategory = () => {
 
                         <tbody>
                             {book_categories.map((ct, index) => (
-                                <tr key={index} className='text-center'>
+                                <tr key={index} className='text-start'>
                                     <td>{index + 1}</td>
                                     <td>{ct}</td>
                                 </tr>

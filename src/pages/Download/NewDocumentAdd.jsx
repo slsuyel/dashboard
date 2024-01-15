@@ -58,6 +58,7 @@ const NewDocumentAdd = () => {
                         <div className="form-group">
                             <label htmlFor="file">File</label>
                             <input
+                                accept="application/pdf"
                                 type="file"
                                 className="form-control"
                                 id="file"

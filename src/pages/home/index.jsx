@@ -30,7 +30,7 @@ export default function Home() {
 
           <div className="row mx-auto ">
             <div className="col-md-4 my-1">
-              <div className=" mx-3 rounded-3 shadow-sm w-100">
+              <div className=" mx-3 rounded-3 shadow-sm border  w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary"> New Order</p>
@@ -45,7 +45,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className=" mx-3 rounded-3 shadow-sm w-100">
+              <div className=" mx-3 rounded-3 shadow-sm border  w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Products</p>
@@ -60,7 +60,7 @@ export default function Home() {
               </div>
             </div>
             <div className="col-md-4 my-1">
-              <div className=" mx-3 rounded-3 shadow-sm w-100">
+              <div className=" mx-3 rounded-3 shadow-sm border  w-100">
                 <div className=" d-flex justify-content-around">
                   <div className="my-auto">
                     <p className="fs-5 mb-0 text-secondary">Total Sales</p>
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="row mx-auto my-3">
 
             <div className="col-md-5 my-auto">
-              <div className=" mb-2  mx-3 p-1 py-3 rounded-3 shadow-sm">
+              <div className=" mb-2  mx-3 p-1 py-3 rounded-3 shadow-sm border ">
                 <div className="row">
                   <div className="col-md-7 text-center ">
                     <p className="mb-0 mb-2 text-secondary">Top 05 Category </p>
@@ -121,7 +121,7 @@ export default function Home() {
 
             <div className="col-md-7  text-secondary">
 
-              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-sm">
+              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-sm border ">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">
@@ -149,7 +149,7 @@ export default function Home() {
                   <img className="ps-1 pt-2" src={vistior} alt="" width={70} />
                 </div>
               </div>
-              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-sm">
+              <div className="align-items-center  mb-2 px-1 py-2 rounded-3 row shadow-sm border ">
                 <div className="col-md-6">
 
                   <div className="d-flex justify-content-between px-1 mb-1 me-3">
@@ -189,7 +189,7 @@ export default function Home() {
           <div className="row mx-auto my-3 text-secondary">
 
             <div className="col-md-4 my-1 mx-auto">
-              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm border ">
                 <div className="d-flex gap-1 justify-content-between">
                   <div><p className="mb-0">Total Earnings</p></div>
                   <div className="d-flex gap-2 pb-2 text-decoration-underline text-info text-sm">
@@ -208,7 +208,7 @@ export default function Home() {
 
             </div>
             <div className="col-md-4 my-1 mx-auto">
-              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm border ">
                 <div className="d-flex gap-1 justify-content-between">
                   <div><p className="mb-0">Avg. Sales</p></div>
                   <div className="d-flex gap-2 pb-2 text-decoration-underline text-info text-sm">
@@ -227,7 +227,7 @@ export default function Home() {
 
             </div>
             <div className="col-md-4 my-1 mx-auto">
-              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm">
+              <div className="align-items-center mb-2 ms-3 p-3 py-2 rounded-3 shadow-sm border ">
 
                 <div className="align-items-center d-flex justify-content-between ">
                   <div>

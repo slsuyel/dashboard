@@ -24,7 +24,7 @@ const data = [
 
 
 const Download = ({ children }) => {
-    // console.log(backBtn);
+    console.log(children);
     const [selectedIds, setSelectedIds] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
 

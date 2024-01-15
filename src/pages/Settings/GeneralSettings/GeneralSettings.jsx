@@ -362,8 +362,8 @@ const GeneralSettings = () => {
                     </div>
                 </div>
 
-                <div className='me-3 text-end'>
-                    <button type="submit" className="bg-nil border-0 fs-4 fw-bold mb-3 p-2 px-3 text-white">
+                <div className='me-3 text-end mb-3'>
+                    <button type="submit" className="active-btn px-4 py-2">
                         Save
                     </button>
                 </div>

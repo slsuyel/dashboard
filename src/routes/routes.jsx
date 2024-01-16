@@ -4,10 +4,8 @@ import Signin from "../pages/auth/Signin";
 import Signup from "../pages/auth/Signup";
 import WithNavbar from "../layouts/WithNavbar";
 import Home from "../pages/home";
-
 import ErrorPage from "../Utilites/ErrorPage";
 import Settings from '../pages/Settings/Settings';
-
 import AddNewCharge from "../pages/Settings/DeliverySettings/AddNewCharge";
 import AddNewSlider from '../pages/Settings/SliderSetting/AddNewSlider';
 import AddNewUser from "../pages/Settings/UserControlSettings/AddNewUser";
@@ -22,12 +20,11 @@ import Visitor from "../pages/Visitor/Visitor";
 import Pages from "../pages/Pages/Pages";
 import NewProduct from "../pages/Products/NewProduct";
 import OrdersListView from "../pages/Customers/OrdersListView";
-import FeaturedCategory from "../pages/FeaturedCategory/FeaturedCategory";
 import Download from "../pages/Download/Download";
 import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
 import ViewPhotoCategory from "../pages/Multimedia/ViewPhotoCategory";
 import MultimediaMainLayout from "../pages/Multimedia/MultimediaMainLayout";
-
+import FetureLayout from "../pages/FeaturedCategory/FetureLayout";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -112,7 +109,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "featured-category",
-                element: <FeaturedCategory />,
+                element: <FetureLayout />,
             },
             {
                 path: "multimedia",

@@ -25,6 +25,7 @@ import NewDocumentAdd from "../pages/Download/NewDocumentAdd";
 import ViewPhotoCategory from "../pages/Multimedia/ViewPhotoCategory";
 import MultimediaMainLayout from "../pages/Multimedia/MultimediaMainLayout";
 import FetureLayout from "../pages/FeaturedCategory/FetureLayout";
+import AddPage from "../pages/Pages/AddPage";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -123,6 +124,10 @@ export const router = createBrowserRouter([
             {
                 path: "pages",
                 element: <Pages />,
+            },
+            {
+                path: "pages/new",
+                element: <AddPage />,
             },
             {
                 path: "download",

@@ -138,7 +138,7 @@ const NewProduct = () => {
                     <div className='col-md-7 p-3 '>
                         <form className="form p-3 rounded shadow-sm" style={{ backgroundColor: '#ffffff96' }}>
                             <div className="form-group">
-                                <label style={{ color: '#48b7d7' }} htmlFor="productName">Products Name</label>
+                                <label htmlFor="productName">Products Name</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -148,7 +148,7 @@ const NewProduct = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label style={{ color: '#48b7d7' }} htmlFor="shortDescription">Short Description</label>
+                                <label htmlFor="shortDescription">Short Description</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -159,7 +159,7 @@ const NewProduct = () => {
                             </div>
 
                             <div className="form-group">
-                                <label style={{ color: '#48b7d7' }} htmlFor="slug">Product Slug</label>
+                                <label htmlFor="slug">Product Slug</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -171,7 +171,7 @@ const NewProduct = () => {
                             </div>
 
                             <div className="form-group">
-                                <label style={{ color: '#48b7d7' }} htmlFor="details">Details</label>
+                                <label htmlFor="details">Details</label>
                                 <ReactQuill theme="snow" className='form-control'
                                     style={{ height: '260px', paddingBottom: '61px' }}
                                     value={content} onChange={setContent} modules={modules} />
@@ -189,11 +189,11 @@ const NewProduct = () => {
                             </div>
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Price:</label>
+                                <label className='mb-0 w-50' htmlFor="">Price:</label>
                                 <input type="number" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
                             </div>
                             <div className="align-items-center d-flex my-2">
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount:</label>
+                                <label className='mb-0 w-50' htmlFor="">Discount:</label>
                                 <label className="dis-switch">
                                     <input type="checkbox" checked={discount} onChange={(e) => setDiscount(e.target.checked)} />
                                     <span className="dis-slider dis-round"></span>
@@ -202,7 +202,7 @@ const NewProduct = () => {
 
                             <div className={`${!discount ? 'd-none' : ''}`}>
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Discount Type</label>
+                                    <label className='mb-0 w-50' htmlFor="">Discount Type</label>
                                     <select className="form-select" value={discountType} onChange={(e) => setDiscountType(e.target.value)}>
                                         <option value="Flat Discount">Flat Discount:</option>
                                         <option value="Percentage">Percentage:</option>
@@ -210,14 +210,14 @@ const NewProduct = () => {
                                 </div>
 
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0 w-50 text-nowrap' style={{ color: '#48b7d7' }} htmlFor="">Discount rate</label>
+                                    <label className='mb-0 w-50 text-nowrap' htmlFor="">Discount rate</label>
                                     <input type="number" className="form-control mx-4" value={discountRate} onChange={(e) => setDiscountRate(e.target.value)} />
                                 </div>
                             </div>
 
 
                             <div className='align-items-center d-flex gap-2 my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Category:</label>
+                                <label className='mb-0 w-50' htmlFor="">Category:</label>
                                 <div className='w-100'>
                                     <select className="form-select" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         {bookCategory.map((w) => <option value={w}>{w}</option>)}
@@ -229,7 +229,7 @@ const NewProduct = () => {
                             </div>
 
                             <div className='align-items-center d-flex gap-2 my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Writers:</label>
+                                <label className='mb-0 w-50' htmlFor="">Writers:</label>
                                 <div className='w-100'>
                                     <select className="form-select" value={writers} onChange={(e) => setWriters(e.target.value)}>
                                         {writerList.map((w) => <option value={w}>{w}</option>)}
@@ -243,40 +243,40 @@ const NewProduct = () => {
 
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Cover by:</label>
+                                <label className='mb-0 w-50' htmlFor="">Cover by:</label>
                                 <input type="text" className="form-control" value={coverBy} onChange={(e) => setCoverBy(e.target.value)} />
                             </div>
 
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Total Page:</label>
+                                <label className='mb-0 w-50' htmlFor="">Total Page:</label>
                                 <input type="text" className="form-control" value={totalPages} onChange={(e) => setTotalPages(e.target.value)} />
                             </div>
 
                             <div className='align-items-center d-flex my-2'>
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0' style={{ color: '#48b7d7' }} htmlFor="">Stock:</label>
+                                    <label className='mb-0' htmlFor="">Stock:</label>
                                     <input type="number" className="form-control mx-4" value={stock} onChange={(e) => setStock(e.target.value)} />
                                 </div>
                                 <div className='align-items-center d-flex my-2'>
-                                    <label className='mb-0 ' style={{ color: '#48b7d7' }} htmlFor="">Weight:</label>
+                                    <label className='mb-0 ' htmlFor="">Weight:</label>
                                     <input type="number" className="form-control mx-4" value={weight} onChange={(e) => setWeight(e.target.value)} />
                                 </div>
                             </div>
 
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Published Date:</label>
+                                <label className='mb-0 w-50' htmlFor="">Published Date:</label>
                                 <input type="date" className="form-control" value={publishedDate} onChange={(e) => setPublishedDate(e.target.value)} />
                             </div>
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">ISBN:</label>
+                                <label className='mb-0 w-50' htmlFor="">ISBN:</label>
                                 <input type="text" className="form-control" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
                             </div>
 
                             <div className='align-items-center d-flex my-2'>
-                                <label className='mb-0 w-50' style={{ color: '#48b7d7' }} htmlFor="">Features Image:</label>
+                                <label className='mb-0 w-50' htmlFor="">Features Image:</label>
                                 <input type="file" className="form-control" onChange={(e) => setFeaturesImage(e.target.files[0])} />
                             </div>
                         </div>

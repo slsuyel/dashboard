@@ -5,3 +5,4 @@
 "build": "vite build",
 "preview": "vite preview"
 },
+# school-dashboard
